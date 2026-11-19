@@ -105,3 +105,7 @@ Entry shape:
   - metadata.version 1.2.0 -> 1.3.0
 
 [LINT 2026-10-02] 27 wiki, 3 raw. Hard: 0, Soft: 15. Regenerated _index.md.
+
+[QUERY 2026-11-19] Added `brand` role (brand, marketing and design teams) to ROLES/ROLE_HINTS, promote.sh help/die text, scaffold.sh placeholder, taxonomy.md and validation-checklist.md; mirrors frontmatter.Roles in the CLI. First user: happySKILLS smart-brand.
+
+[LINT 2026-11-19] 27 wiki, 3 raw. Hard: 0, Soft: 15. Regenerated _index.md.

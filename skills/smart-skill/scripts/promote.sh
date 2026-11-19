@@ -47,7 +47,7 @@ Target (required):
 
 Taxonomy - written into the skill's SKILL.md, then validated:
   --category <c>     development | design | writing | meta
-  --role <r>         fde | ds | sdr, or none for a general-purpose skill
+  --role <r>         fde | ds | sdr | brand, or none for a general-purpose skill
                      (happySKILLS needs a real role)
   --tags <a,b,c>     kebab-case keywords; added to the existing tags
 
@@ -186,7 +186,7 @@ while IFS='=' read -r key value; do
 done <<<"$target_info"
 
 if [[ "$TARGET_KEY" == happyskills && "$HAVE_ROLE" -eq 1 && "$ROLE" == none ]]; then
-  die 2 "$LABEL organizes skills by role - pass --role fde, ds, or sdr"
+  die 2 "$LABEL organizes skills by role - pass --role fde, ds, sdr, or brand"
 fi
 
 SKILL_DIR=$(engine resolve "$SKILL_ARG") || exit 2

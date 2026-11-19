@@ -18,7 +18,7 @@ compatibility: Requires bash, POSIX utilities (awk, sed, find, grep), python3, w
 allowed-tools: "Bash(bash:*) Bash(sh:*) Read Write Edit Glob Grep"
 metadata:
   author: jjfantini
-  version: 1.3.0
+  version: 1.4.0
   previous_names: ["use-smart-skill"]
   category: meta
   tags: [meta, skill-authoring, smart-skill, scaffolding, promotion, humblskill]

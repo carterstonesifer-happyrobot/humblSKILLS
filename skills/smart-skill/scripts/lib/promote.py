@@ -36,7 +36,7 @@ from pathlib import Path
 # cli/cmd/build-registry/promote_sync_test.go fails the humblSKILLS build if
 # these drift.
 CATEGORIES = ("development", "design", "writing", "meta")
-ROLES = ("fde", "ds", "sdr")
+ROLES = ("fde", "ds", "sdr", "brand")
 PLATFORMS = ("claude-code", "claude-desktop", "codex", "cursor", "pi")
 
 CATEGORY_HINTS = {
@@ -49,6 +49,7 @@ ROLE_HINTS = {
     "fde": "forward-deployed engineer",
     "ds": "data scientist",
     "sdr": "sales development representative",
+    "brand": "brand, marketing and design teams",
 }
 
 TARGETS = {
