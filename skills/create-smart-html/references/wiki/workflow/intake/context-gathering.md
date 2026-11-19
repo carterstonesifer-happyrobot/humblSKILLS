@@ -6,13 +6,13 @@ concept: context-gathering
 description: "The minimum question set that prevents rebuilding the page: content, audience, structure, orientation, interactivity budget"
 tags: intake, requirements, orientation, questions
 sources: []
-last_ingested: 2026-07-27
+last_ingested: 2026-11-19
 ---
 
 ## Ask first, build once
 
 The most expensive failure mode for this skill is generating a beautiful page
-around the wrong content model or the wrong orientation. Collect these five
+around the wrong content model or the wrong orientation. Collect these six
 answers before writing markup. If the user's request already answers one,
 don't re-ask it.
 
@@ -34,6 +34,14 @@ don't re-ask it.
 5. **Interactivity budget** — sortable tables, collapsible sections, hover
    detail are fine on screen but must degrade to fully-expanded static
    content in print (see `pdf/export/print-css.md`).
+6. **Whose brand?** — if the page is for or about an organization that has
+   an installed brand skill (frontmatter `metadata.role: brand`), read that
+   skill's color, type and review-checklist pages before building, and let
+   its tokens and rules override this skill's defaults. Don't ask the user
+   to re-supply a palette the brand skill already holds, and don't copy its
+   values into this skill's brain: point at the brand skill instead, so a
+   brand refresh lands in one place. Only ask when the request signals a
+   different brand (a customer's own co-branded document, for instance).
 
 ### Incorrect
 
