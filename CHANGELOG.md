@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.57.0](https://github.com/jjfantini/humblSKILLS/compare/v2.56.0...v2.57.0) (2026-11-19)
+
+
+### Features
+
+* **build-registry:** add --platforms-base to catch skills dropping a platform ([fe106b5](https://github.com/jjfantini/humblSKILLS/commit/fe106b52bc4f273cdf2e27a3e8b5f63963dfcc1a))
+* **build-registry:** add --platforms-base to catch skills dropping a platform ([6fd3774](https://github.com/jjfantini/humblSKILLS/commit/6fd37744c846390d59c5df507d5227b9a0b01f3d))
+* **cli:** add brand role to the skill taxonomy ([80ecd37](https://github.com/jjfantini/humblSKILLS/commit/80ecd37634f02e587961232e6998a0b9e6a45a16))
+* **smart-skill:** accept --role brand in promote and scaffold, bump 1.4.0 ([994a9b2](https://github.com/jjfantini/humblSKILLS/commit/994a9b2dadc1b386e8d08b7ad7cacaf404394fdd))
+
+
+### Bug Fixes
+
+* **update:** refresh desktop zips of global installs and stop phantom drift ([da128da](https://github.com/jjfantini/humblSKILLS/commit/da128da7f2f933f924b79cc187e60ba8aa225a59))
+* **update:** refresh desktop zips of global installs and stop phantom drift ([b641504](https://github.com/jjfantini/humblSKILLS/commit/b641504840f98f22497d71fe6b8e5ce757d0aa3c)), closes [#311](https://github.com/jjfantini/humblSKILLS/issues/311)
+
 ## [2.57.0-pre](https://github.com/jjfantini/humblSKILLS/compare/v2.56.1-pre...v2.57.0-pre) (2026-10-28)
 
 
