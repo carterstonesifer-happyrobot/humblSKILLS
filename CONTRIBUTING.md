@@ -46,7 +46,7 @@ in the browser) and what `humblskills search --category=... --role=...` finds.
 | Field | Values |
 |---|---|
 | `category` | `development`, `design`, `writing`, `meta` |
-| `role` | `fde`, `ds`, `sdr` - or `none` for a general-purpose public skill (happySKILLS needs one) |
+| `role` | `fde`, `ds`, `sdr`, `brand` - or `none` for a general-purpose public skill (happySKILLS needs one) |
 | `tags` | 3+ kebab-case words people would search for |
 
 The agent proposes them and you confirm. `promote.sh` writes them into your

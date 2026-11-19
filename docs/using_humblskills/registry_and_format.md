@@ -59,6 +59,7 @@ which is mainly useful for private, company-internal registries.
 | `fde` | Forward-deployed engineer |
 | `ds` | Data scientist |
 | `sdr` | Sales development representative |
+| `brand` | Brand, marketing and design teams |
 
 ```sh
 humblskills search --role=fde
