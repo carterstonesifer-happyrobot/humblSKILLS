@@ -36,10 +36,10 @@ func IsKnownCategory(c string) bool {
 
 // Roles is the closed, stable set of roles a skill can be scoped to:
 // fde (forward-deployed engineer), ds (data scientist), sdr (sales
-// development representative). Optional per skill (empty = unscoped),
+// development representative), brand (brand, marketing and design teams). Optional per skill (empty = unscoped),
 // single-valued like category. Adding a role is a taxonomy decision that
 // ships in a CLI release, same as adding a category.
-var Roles = []string{"fde", "ds", "sdr"}
+var Roles = []string{"fde", "ds", "sdr", "brand"}
 
 // IsKnownRole reports whether r is one of Roles. Exported so callers
 // outside this package (e.g. the search command's --role flag) can validate

@@ -22,7 +22,7 @@ automates most items flagged with [auto].
 - [ ] `description` includes BOTH what the skill does and WHEN to trigger it
 - [ ] `metadata.author` set, `metadata.version` set
 - [ ] `metadata.category` is one of development, design, writing, meta
-- [ ] `metadata.role` is fde, ds, or sdr - or removed for a general-purpose public skill
+- [ ] `metadata.role` is fde, ds, sdr, or brand - or removed for a general-purpose public skill
 - [ ] `metadata.tags` has 3+ kebab-case search keywords
 - [ ] `metadata.preserve` lists `references/raw/`, `references/wiki/`, `decisions.md`, `log.md`, `patterns.md`
 - [ ] `compatibility` either filled in with real env requirements OR removed (no TODO placeholder left in shipped skill)

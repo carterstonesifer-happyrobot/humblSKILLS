@@ -21,7 +21,7 @@ never found. The category and role sets are closed and validated by
 | Field | Values | Rule |
 |---|---|---|
 | `category` | `development`, `design`, `writing`, `meta` | required, exactly one |
-| `role` | `fde`, `ds`, `sdr` | who it serves; required for happySKILLS, optional for humblSKILLS |
+| `role` | `fde`, `ds`, `sdr`, `brand` | who it serves; required for happySKILLS, optional for humblSKILLS |
 | `tags` | kebab-case keywords | required; 3+ recommended |
 
 - **development** - git/workflow tooling, integrations, APIs, data and infra
@@ -29,7 +29,7 @@ never found. The category and role sets are closed and validated by
 - **writing** - content, copy, editing
 - **meta** - skill authoring, project onboarding
 - **fde** forward-deployed engineer, **ds** data scientist, **sdr** sales
-  development representative
+  development representative, **brand** brand, marketing and design teams
 
 **Incorrect (scaffold placeholders and free-form values):**
 

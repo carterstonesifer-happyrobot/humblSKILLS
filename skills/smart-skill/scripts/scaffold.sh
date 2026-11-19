@@ -151,7 +151,7 @@ metadata:
   author: TODO
   version: "1.0.0"
   category: TODO  # required, one of: development, design, writing, meta
-  role: TODO  # who it serves: fde, ds, or sdr - delete only for a general-purpose public skill
+  role: TODO  # who it serves: fde, ds, sdr, or brand - delete only for a general-purpose public skill
   tags: [TODO]
   platforms: [claude-code, cursor, codex]
   preserve:
