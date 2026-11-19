@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T19:05:13Z",
+  "generated_at": "2026-11-19T19:12:46Z",
   "source": {
     "repo": "github.com/jjfantini/humblSKILLS",
     "ref": "main",
-    "sha": "b9da0c4b46825c25bf9defe249a43943f78c9c27"
+    "sha": "61f4002e8742b12c058d2ea9808a7a35a30746ad"
   },
   "skills": [
     {
@@ -391,7 +391,7 @@
         "generate-smart-html"
       ],
       "path": "skills/create-smart-html",
-      "dir_sha": "322dc08029117084ea2982b7d7d430f107a89451f51d516965d15f8796c535b8"
+      "dir_sha": "b932e9cf4caca56625632c93a60d8042af363234280126d035f70b628b90e6ec"
     },
     {
       "name": "create-smart-scroll-animation",
