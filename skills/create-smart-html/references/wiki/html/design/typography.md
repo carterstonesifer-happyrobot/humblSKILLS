@@ -40,9 +40,10 @@ installed and falls back everywhere else, with nothing downloaded.
 - If the brand skill names no fallback, don't present the system stack as
   on-brand. Tell the user which face the page asked for and what it falls
   back to.
-- Check what actually rendered: `grep -a /BaseFont out.pdf` lists the fonts
-  embedded in the exported PDF. A missing brand face shows up there as the
-  fallback.
+- Check what actually rendered with `pdffonts out.pdf` (poppler). A missing
+  brand face shows up there as the fallback. `grep -a /BaseFont` is not
+  enough: Chrome embeds macOS system fonts as Type 3, which carry no
+  `/BaseFont` entry.
 
 ### Scale and rhythm
 
