@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.58.0](https://github.com/jjfantini/humblSKILLS/compare/v2.57.0...v2.58.0) (2026-11-20)
+
+
+### Features
+
+* **create-smart-html:** defer to an installed brand skill, bump 0.2.0 ([b9da0c4](https://github.com/jjfantini/humblSKILLS/commit/b9da0c4b46825c25bf9defe249a43943f78c9c27))
+
+
+### Bug Fixes
+
+* **create-smart-html:** verify rendered fonts with pdffonts, not /BaseFont ([61f4002](https://github.com/jjfantini/humblSKILLS/commit/61f4002e8742b12c058d2ea9808a7a35a30746ad))
+
 ## [2.58.0-pre](https://github.com/jjfantini/humblSKILLS/compare/v2.57.0...v2.58.0-pre) (2026-11-20)
 
 
