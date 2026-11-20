@@ -6,7 +6,7 @@ concept: typography
 description: "System font stacks, scale, and spacing that read as designed — on screen and at print resolution — with zero downloads"
 tags: typography, fonts, system-stack, scale, print
 sources: []
-last_ingested: 2026-07-27
+last_ingested: 2026-11-19
 ---
 
 ## Designed type, zero downloads
@@ -27,6 +27,23 @@ serif, and a good mono; the craft is in the scale and spacing, not the file.
 
 Sans for UI/dashboards, serif for document-genre pages (reports, proposals)
 where a print feel fits, mono for data/code. Pick per intake genre.
+
+### Brand typefaces
+
+When a brand skill names a licensed face, put it first in the stack by its
+installed name and keep the system stack behind it:
+`font-family: "Brand Sans", system-ui, ...`. It renders where the font is
+installed and falls back everywhere else, with nothing downloaded.
+
+- Never base64-embed a licensed commercial font. Embedding redistributes it
+  inside a portable file, whoever the audience is.
+- If the brand skill names no fallback, don't present the system stack as
+  on-brand. Tell the user which face the page asked for and what it falls
+  back to.
+- Check what actually rendered with `pdffonts out.pdf` (poppler). A missing
+  brand face shows up there as the fallback. `grep -a /BaseFont` is not
+  enough: Chrome embeds macOS system fonts as Type 3, which carry no
+  `/BaseFont` entry.
 
 ### Scale and rhythm
 

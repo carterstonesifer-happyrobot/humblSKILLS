@@ -29,3 +29,7 @@ Entry shape:
 [LINT 2026-07-30] 5 wiki, 0 raw. Hard: 0, Soft: 5. Regenerated _index.md.
 
 [LINT 2026-07-30] 5 wiki, 0 raw. Hard: 0, Soft: 5. Regenerated _index.md.
+
+[LINT 2026-11-19] 5 wiki, 0 raw. Hard: 0, Soft: 5. Regenerated _index.md.
+
+[2026-11-19] Brand-skill hook. Intake question 6 and SKILL.md step 1 now defer to an installed `metadata.role: brand` skill for tokens, type and review rules; typography.md gains a brand-typeface rule (licensed face first by name, never embedded, flag a missing fallback, verify with /BaseFont). Brand values stay in the brand skill so a refresh lands in one place. Bumped 0.2.0.
