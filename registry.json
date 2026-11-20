@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T14:48:09Z",
+  "generated_at": "2026-11-19T19:12:46Z",
   "source": {
     "repo": "github.com/jjfantini/humblSKILLS",
     "ref": "main",
-    "sha": "994a9b2dadc1b386e8d08b7ad7cacaf404394fdd"
+    "sha": "61f4002e8742b12c058d2ea9808a7a35a30746ad"
   },
   "skills": [
     {
@@ -361,7 +361,7 @@
     },
     {
       "name": "create-smart-html",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "description": "Gather requirements, then generate a sleek, zero-dependency, single-file HTML page (inline CSS/JS, system-stack typography, no CDNs) that is print-faithful on US Letter paper — portrait or landscape — and export it to PDF with headless Google Chrome. Use when the user says \"generate an HTML page/report\", \"single-file HTML\", \"make this printable\", \"export HTML to PDF\", \"US letter PDF\", \"landscape/portrait PDF\", or wants data or a document visualized as a portable webpage plus a matching PDF. Do NOT use for multi-page web apps, HTML emails, or animation work (use smart-animation for motion).\n",
       "category": "design",
       "tags": [
@@ -391,7 +391,7 @@
         "generate-smart-html"
       ],
       "path": "skills/create-smart-html",
-      "dir_sha": "e7854d86e5014db031ca144de9f7f35b231d5d3c64e11588f313ece8c4068ab7"
+      "dir_sha": "b932e9cf4caca56625632c93a60d8042af363234280126d035f70b628b90e6ec"
     },
     {
       "name": "create-smart-scroll-animation",
