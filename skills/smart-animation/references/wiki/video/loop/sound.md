@@ -7,6 +7,7 @@ description: "Code-made sound for the video loop: scene data-cues become cues.js
 tags: video, sound, sfx, earshot, cues, sync, loudness, lufs, beats, music
 sources:
   - "references/raw/earshot.md"
+  - "references/raw/chatterbox.md"
   - "references/raw/hyperframes.md"
   - "references/raw/video-loop-brief.md"
   - "references/raw/hyperframes-motion-reel-skill.md"

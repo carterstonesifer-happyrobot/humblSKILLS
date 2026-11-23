@@ -2,7 +2,7 @@
 title: "thinking-orbs: Agent Status Indicators"
 context: lib
 category: orbs
-concept: usage
+concept: orbs-usage
 description: "thinking-orbs (React/2D-canvas): six stateful 'thinking' indicators for AI/agent UIs. Install, the six states, props, and when to use it."
 tags: thinking-orbs, react, canvas, ai-ui, loading, status
 sources:

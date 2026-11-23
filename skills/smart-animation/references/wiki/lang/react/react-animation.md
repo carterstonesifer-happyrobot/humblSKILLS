@@ -2,7 +2,7 @@
 title: "React Animation: CSS First, Motion When It Earns It"
 context: lang
 category: react
-concept: animation
+concept: react-animation
 description: "React motion decision rule: CSS/native for state and reveals; reach for Motion (framer-motion) only for layout, presence, and gesture animations."
 tags: react, motion, framer-motion, animatepresence, usereducedmotion, layout
 sources:

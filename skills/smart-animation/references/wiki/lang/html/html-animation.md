@@ -2,7 +2,7 @@
 title: "HTML Animation: Native Elements That Animate"
 context: lang
 category: html
-concept: animation
+concept: html-animation
 description: "Motion from semantic HTML: Popover API, <details>, dialog, and @starting-style hooks — accessible, JS-light interaction states."
 tags: html, popover, details, dialog, semantic, starting-style
 sources:
@@ -15,7 +15,7 @@ last_ingested: 2026-07-23
 In a plain-HTML codebase, prefer native interactive elements — they bring
 built-in accessibility (focus management, ARIA, keyboard, backdrop) and animate
 with a few lines of CSS. Writing a custom `<div>` widget throws all of that
-away. The motion itself lives in CSS (see `lang/css/animation`); this file is
+away. The motion itself lives in CSS (see `lang/css/css-animation.md`); this file is
 about picking the right markup to hang it on.
 
 **Incorrect (div soup — no a11y, needs JS, manual everything):**
