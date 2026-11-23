@@ -264,11 +264,15 @@ func preserveSeqNode(preserve []string) *yaml.Node {
 //   - File entry (no trailing "/"): user wins; user's bytes overwrite whatever
 //     staging shipped.
 //   - Directory entry (trailing "/"): deep merge; staging wins on per-file
-//     conflicts. Files only in user land alongside staging's version.
+//     conflicts. Files only in user land alongside staging's version, unless
+//     pristineRoot (the previous revision as shipped, "" when unavailable)
+//     holds the same bytes at that path: then upstream deleted or renamed a
+//     file the user never touched, and carrying it forward would leave a
+//     stale copy behind forever.
 //
 // Type mismatches (file entry vs user dir, or dir entry vs user file) and
 // symlinks in the user source are rejected rather than silently resolved.
-func applyPreserve(userRoot, stagingRoot string, entries []string) error {
+func applyPreserve(userRoot, stagingRoot, pristineRoot string, entries []string) error {
 	for _, raw := range entries {
 		rel := strings.TrimSpace(raw)
 		rel = strings.TrimPrefix(rel, "./")
@@ -295,7 +299,11 @@ func applyPreserve(userRoot, stagingRoot string, entries []string) error {
 			if !fi.IsDir() {
 				return fmt.Errorf("preserve: entry %q declares a directory but %s is a file", raw, srcAbs)
 			}
-			if err := preserveMergeDir(srcAbs, dstAbs); err != nil {
+			pristineAbs := ""
+			if pristineRoot != "" {
+				pristineAbs = filepath.Join(pristineRoot, relClean)
+			}
+			if err := preserveMergeDir(srcAbs, dstAbs, pristineAbs); err != nil {
 				return err
 			}
 			continue
@@ -312,8 +320,9 @@ func applyPreserve(userRoot, stagingRoot string, entries []string) error {
 
 // preserveMergeDir walks userDir and copies every regular file into dstDir
 // only when dstDir does not already have that relative path — staging wins on
-// conflicts. Symlinks anywhere in userDir abort the merge.
-func preserveMergeDir(userDir, dstDir string) error {
+// conflicts — and pristineDir does not hold it byte-for-byte (an unedited file
+// the new revision no longer ships). Symlinks anywhere in userDir abort the merge.
+func preserveMergeDir(userDir, dstDir, pristineDir string) error {
 	return filepath.Walk(userDir, func(p string, fi os.FileInfo, walkErr error) error {
 		if walkErr != nil {
 			return walkErr
@@ -333,12 +342,32 @@ func preserveMergeDir(userDir, dstDir string) error {
 			if _, err := os.Stat(dst); err == nil {
 				return nil
 			}
+			if pristineDir != "" && isDir(filepath.Join(pristineDir, rel)) {
+				return nil // a shipped dir the new revision dropped; user files inside recreate it
+			}
 			return os.MkdirAll(dst, fi.Mode()&0o777|0o700)
 		}
 		if _, err := os.Stat(dst); err == nil {
 			// Staging already ships this file; staging wins.
 			return nil
 		}
+		if pristineDir != "" && sameBytes(p, filepath.Join(pristineDir, rel)) {
+			return nil // shipped before, unedited, gone upstream: drop it
+		}
 		return copyFile(p, dst, fi.Mode()&0o777)
 	})
+}
+
+func isDir(p string) bool {
+	fi, err := os.Stat(p)
+	return err == nil && fi.IsDir()
+}
+
+func sameBytes(a, b string) bool {
+	x, err := os.ReadFile(a)
+	if err != nil {
+		return false
+	}
+	y, err := os.ReadFile(b)
+	return err == nil && bytes.Equal(x, y)
 }
