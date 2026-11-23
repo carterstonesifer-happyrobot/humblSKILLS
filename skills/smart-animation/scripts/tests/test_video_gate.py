@@ -159,6 +159,25 @@ def main():
         code, out = run('report', d, 'x.mp4')
         expect(code == 3 and 'integrated loudness -17.0' in out, 'loudness off target fails the film', out)
 
+        listen['loudness']['integrated_lufs'] = -14.1
+        write(f'{d}/critique/audio/listen.json', listen)
+        os.remove(f'{d}/.loop/scores.json')
+        for it, sc in ((2, 6), (3, 7), (4, 8), (5, 7)):  # intent line carries the difference from GOOD's 8
+            write(f'{d}/.loop/state.json', {'iteration': it})
+            score_all(d, body=GOOD.replace(': 2 - the word', f': {sc - 6} - the word'), score=str(sc))
+            code, out = run('report', d, 'x.mp4')
+            if it == 3:
+                expect(code == 3 and 'stall' not in out, 'rising scores (6 -> 7) are progress, not a stall', out)
+        expect(code == 4 and 'stall a: 6 -> 7 -> 8 -> 7' in out and 'PLAN row' in out,
+               'failing again at a score it already failed at (7 -> 8 -> 7) is a stall', out)
+        open(f'{d}/PLAN.md', 'a').write('| a | card slides in, then the bar refills |\n')
+        code, out = run('report', d, 'x.mp4')
+        expect(code == 4 and 'stall' not in out, 'rewriting the PLAN row clears the stall', out)
+        os.remove(f'{d}/.loop/scores.json')
+        score_all(d)
+        listen['loudness']['integrated_lufs'] = -17.0
+        write(f'{d}/critique/audio/listen.json', listen)
+
         write(f'{d}/.loop/state.json', {'iteration': 5})
         expect(run('report', d, 'x.mp4')[0] == 4, 'failing at the iteration cap exits 4')
         write(f'{d}/.loop/state.json', {'iteration': 1})
