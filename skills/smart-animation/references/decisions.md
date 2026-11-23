@@ -250,9 +250,10 @@ Entry shape:
 - Chose: rename to `<category>-animation` and `<category>-usage` (for example `lang/css/animation.md`
   -> `lang/css/css-animation.md`, `lib/beams/usage.md` -> `lib/beams/beams-usage.md`). Older log
   entries keep the old paths.
-- Why: the rename is local and needs no exception. The CLI deep-merges `references/wiki/` on update,
-  so installed copies keep the old files beside the new ones. SKILL.md routes only to the new names,
-  so the old files are unread duplicates.
+- Why: the rename is local and needs no exception. The CLI used to deep-merge `references/wiki/` on
+  update and keep the old files next to the new ones. The CLI fix that shipped with this change drops
+  a preserved file when it matches the previous release byte for byte and the new release no longer
+  ships it. Files the user edited are kept. No migration script, because nothing runs one on update.
 - Result: lint 0 hard, 0 soft (the 13th finding was `raw/chatterbox.md` uncited; `sound.md` cites it now).
 
 ### 2026-11-23 | A stall rule in the gate, not a higher cap
