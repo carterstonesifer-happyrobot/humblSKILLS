@@ -142,3 +142,7 @@ Entry shape:
   plan questions for voice engine and iteration budget, cut/sound/critic lessons in the wiki.
 
 [LINT 2026-10-20] 23 wiki, 19 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+
+[INGEST 2026-11-23] Added isometric-3d-models skill as raw source and distilled wiki/motion/isometric/demo-scenes.md; routed from SKILL.md so animation skills stay in one place.
+
+[LINT 2026-11-23] 24 wiki, 20 raw. Hard: 0, Soft: 13. Regenerated _index.md.

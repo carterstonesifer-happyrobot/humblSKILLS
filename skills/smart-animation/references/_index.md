@@ -13,7 +13,7 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 
 - **lang** -> `css`, `html`, `js`, `react`, `ts`
 - **lib** -> `beams`, `beautiful-ui`, `canvas-ui`, `gooey`, `metal`, `motion-react`, `orbs`, `react-bits`, `transitions`
-- **motion** -> `principles`
+- **motion** -> `isometric`, `principles`
 - **video** -> `loop`
 
 ## Wiki
@@ -80,6 +80,10 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 
 ### motion
 
+#### isometric
+
+- [demo-scenes.md](wiki/motion/isometric/demo-scenes.md) - Isometric Demo Scenes: SVG Scenes Driven by a Sim Clock
+
 #### principles
 
 - [accessibility.md](wiki/motion/principles/accessibility.md) - Reduced Motion and the Accessibility Floor
@@ -111,6 +115,7 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 - [hyperframes-motion-reel-skill.md](raw/hyperframes-motion-reel-skill.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/sound.md
 - [hyperframes-planning.md](raw/hyperframes-planning.md) - cited by: references/wiki/video/loop/plan.md, references/wiki/video/loop/reference-style.md
 - [hyperframes.md](raw/hyperframes.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/render-engine.md, references/wiki/video/loop/self-critique.md, references/wiki/video/loop/sound.md
+- [isometric-3d-models-SKILL.md](raw/isometric-3d-models-SKILL.md) - cited by: references/wiki/motion/isometric/demo-scenes.md
 - [liquid-gooey.md](raw/liquid-gooey.md) - cited by: references/wiki/lib/gooey/usage.md
 - [metal-fx.md](raw/metal-fx.md) - cited by: references/wiki/lib/metal/usage.md
 - [motion-react.md](raw/motion-react.md) - cited by: references/wiki/lib/motion-react/usage.md

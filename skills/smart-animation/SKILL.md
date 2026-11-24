@@ -106,6 +106,7 @@ and `references/wiki/motion/principles/accessibility.md` (reduced-motion floor +
 - **Exit animations, layout/FLIP animation, spring physics, or interruptible orchestration in React:** Read `references/wiki/lib/motion-react/usage.md` (Motion, formerly Framer Motion) — the four things CSS cannot do
 - **A specific finished effect (split-text reveal, aurora background, magnet button) from a large catalog:** Read `references/wiki/lib/react-bits/usage.md` (React Bits) — check the per-component dependency cost first
 - **AI / agent interface states — thinking traces, streaming text, tool chips, approval gates, confidence, context cards, diffs:** Read `references/wiki/lib/beautiful-ui/usage.md` (Beautiful UI)
+- **Animated isometric (2.5D) demo scene of a place (warehouse, pharmacy, hospital, airport) with people, machines, triggers, and a status/Gantt panel, as one standalone HTML file:** Read `references/wiki/motion/isometric/demo-scenes.md` (hand-built SVG + sim clock; full recipe in `references/raw/isometric-3d-models-SKILL.md`)
 
 **And route video work (a rendered MP4, not live UI motion):**
 
