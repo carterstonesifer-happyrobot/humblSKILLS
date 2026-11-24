@@ -2,7 +2,7 @@
 title: "Motion for React: Springs, Layout, and Exit Animations"
 context: lib
 category: motion-react
-concept: usage
+concept: motion-react-usage
 description: "Motion (formerly Framer Motion): the four things CSS can't do (exit, layout, spring, interruption), the 34kb vs 4.6kb LazyMotion trade, and useReducedMotion."
 tags: motion, framer-motion, react, spring, layout-animation, exit-animation, lazymotion, bundle-size
 sources:
@@ -37,7 +37,7 @@ The threshold is whether you need one of:
 3. **Spring physics** — velocity-aware motion, not a fixed duration
 4. **Interruption** — a new gesture retargeting a running animation mid-flight
 
-Need none of those? Read `lang/css/animation.md` or `lang/react/animation.md`
+Need none of those? Read `lang/css/css-animation.md` or `lang/react/react-animation.md`
 instead and close this file.
 
 **Incorrect (Motion for what CSS already does — 34kb for a hover):**
@@ -112,7 +112,7 @@ crossfade still communicates the state change. See
 ### Note on stacking
 
 React Bits components frequently bundle `motion` themselves (see
-`lib/react-bits/usage.md`). If both are in play, you are paying for one copy —
+`lib/react-bits/react-bits-usage.md`). If both are in play, you are paying for one copy —
 check before adding a second animation library on top.
 
 ## Sources

@@ -1,3 +1,13 @@
+# isometric-3d-models (Carter Stonecipher) - source skill, kept whole
+
+Author: Carter Stonecipher. He wrote this skill and used it to build animated isometric demo scenes
+(a distribution center and a pharmacy cold chain). Shared with the maintainer over Slack and ingested
+2026-11-23 with his attribution. Distilled into `wiki/scene/isometric/isometric-demo-scenes.md`.
+Kept as he wrote it, with one change at ingest: a named retail chain is generalized to "retail".
+Its `present_files` and "outputs folder" steps belong to the chat app it was written in.
+
+---
+
 ---
 name: "isometric-3d-models"
 description: "Create demo-ready animated isometric (2.5D \"3D\") scene components from a prompt — any setting (warehouse, pharmacy, hospital, factory, airport, store, office, data center) — styled from a company's brand/media pages when a link is given, with deterministic clock-driven animation, scripted and API-fired triggers that change the scene, optional Gantt/status panels, and a standalone HTML (or React) deliverable."
@@ -113,5 +123,5 @@ window.SCENE={ setTime,getTime,play,pause,setRate, select(id), state(),
 
 ## Reference scenes already proven with this recipe
 - Distribution center: dock wall at back with trucks behind, shutters open only while docked, shelving rows interleaved with actor layers, L-conveyor, forklifts/dock staff tied to docked trucks and shifts, AMRs dwelling at conveyor, door Gantt + shift sub-rows, unstaffed-door KPI.
-- Pharmacy cold chain: CVS-style counter (drop off / pick up / consultation), will-call bins, fill + verification stations, stock shelving, drive-thru window, 3 fridges + freezer on the back wall (CDC 2–8 °C / −50 to −15 °C), two pharmacists with itineraries, door-ajar excursion and compressor-drift triggers, staggered status tags, logger cards and event log, `setReading` for live sensors.
+- Pharmacy cold chain: retail-style counter (drop off / pick up / consultation), will-call bins, fill + verification stations, stock shelving, drive-thru window, 3 fridges + freezer on the back wall (CDC 2–8 °C / −50 to −15 °C), two pharmacists with itineraries, door-ajar excursion and compressor-drift triggers, staggered status tags, logger cards and event log, `setReading` for live sensors.
 

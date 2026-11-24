@@ -1,5 +1,35 @@
 # Changelog
 
+## [2.59.0](https://github.com/jjfantini/humblSKILLS/compare/v2.58.1...v2.59.0) (2026-11-24)
+
+
+### Features
+
+* **smart-animation:** isometric/Three.js scenes, gate stall rule, lint clean-up (0.7.0) ([3345330](https://github.com/jjfantini/humblSKILLS/commit/3345330a141dba8dcc51fac1f34bb2181cd6f48e))
+
+## [2.59.0-pre](https://github.com/jjfantini/humblSKILLS/compare/v2.58.1...v2.59.0-pre) (2026-11-24)
+
+
+### Features
+
+* **smart-animation:** isometric/Three.js scenes, gate stall rule, lint clean-up (0.7.0) ([3345330](https://github.com/jjfantini/humblSKILLS/commit/3345330a141dba8dcc51fac1f34bb2181cd6f48e))
+
+## [2.58.1](https://github.com/jjfantini/humblSKILLS/compare/v2.58.0...v2.58.1) (2026-11-24)
+
+
+### Bug Fixes
+
+* **cli:** drop unedited files upstream removed from preserved dirs ([91934a2](https://github.com/jjfantini/humblSKILLS/commit/91934a27c4b195b6c9c798e04af2980aa6345c31))
+* **cli:** drop unedited files upstream removed from preserved dirs ([4d03387](https://github.com/jjfantini/humblSKILLS/commit/4d03387d0e0f2735710cb8680955911306e3d3f9))
+
+## [2.58.1-pre](https://github.com/jjfantini/humblSKILLS/compare/v2.58.0...v2.58.1-pre) (2026-11-24)
+
+
+### Bug Fixes
+
+* **cli:** drop unedited files upstream removed from preserved dirs ([91934a2](https://github.com/jjfantini/humblSKILLS/commit/91934a27c4b195b6c9c798e04af2980aa6345c31))
+* **cli:** drop unedited files upstream removed from preserved dirs ([4d03387](https://github.com/jjfantini/humblSKILLS/commit/4d03387d0e0f2735710cb8680955911306e3d3f9))
+
 ## [2.58.0](https://github.com/jjfantini/humblSKILLS/compare/v2.57.0...v2.58.0) (2026-11-20)
 
 

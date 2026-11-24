@@ -27,7 +27,7 @@ Entry shape:
 - Chose: (A) border-beam, with a naming note and a pointer to the third-party
   `border-beam-vanilla` port for non-React stacks.
 - Why: user confirmed border-beam is the intended library.
-- Result: `references/wiki/lib/beams/usage.md` documents border-beam.
+- Result: `references/wiki/lib/beams/beams-usage.md` documents border-beam.
 
 ### 2026-07-23 | Standalone skill, no cross-links to existing animation skills
 - Context: the repo already has `create-smart-scroll-animation`,
@@ -53,7 +53,7 @@ Entry shape:
 ### 2026-07-24 | Added Canvas UI as a fifth library
 - Context: user surfaced canvasui.dev (David Haz) — 27 creative canvas/WebGL
   effects over real HTML, shadcn copy-paste, React/Vue/Svelte/vanilla.
-- Options: (A) add it as `lib/canvas-ui/usage`, (B) skip (out of scope),
+- Options: (A) add it as `lib/canvas-ui/canvas-ui-usage.md`, (B) skip (out of scope),
   (C) expand language routing to Vue/Svelte to match its framework matrix.
 - Chose: (A) add the lib concept only; did NOT expand language routing.
 - Why: strong thematic fit for the `lib` context; Vue/Svelte are outside this
@@ -63,14 +63,14 @@ Entry shape:
   html-in-canvas mode is an experimental Chrome origin-trial feature (prefer its
   WebGL components for guaranteed support), (2) license is MIT + Commons Clause,
   not pure MIT like the Antalik libs.
-- Result: `references/wiki/lib/canvas-ui/usage.md` + `references/raw/canvas-ui.md`;
+- Result: `references/wiki/lib/canvas-ui/canvas-ui-usage.md` + `references/raw/canvas-ui.md`;
   skill version bumped 0.1.0 -> 0.2.0.
 
 ### 2026-07-30 | lib slug `motion-react`, not `motion`
 - Context: adding Motion (formerly Framer Motion) as a lib concept, while the
   wiki already has a top-level `motion` context holding the shared principles
   (`wiki/motion/principles/*`).
-- Options: (A) `lib/motion/usage`, (B) `lib/motion-react/usage`,
+- Options: (A) `lib/motion/usage`, (B) `lib/motion-react/motion-react-usage.md`,
   (C) `lib/framer/usage`.
 - Chose: (B) `motion-react`.
 - Why: (A) is filesystem-legal but makes `_index.md` read "lib -> motion" next to
@@ -78,7 +78,7 @@ Entry shape:
   should not have to disambiguate. (C) encodes the outdated `framer-motion`
   package name the library has moved off. `motion-react` matches the actual
   import path `motion/react`.
-- Result: `references/wiki/lib/motion-react/usage.md`; no collision in the index.
+- Result: `references/wiki/lib/motion-react/motion-react-usage.md`; no collision in the index.
 
 ### 2026-07-30 | Beautiful UI documented despite having no license and no package
 - Context: user requested beautiful-ui-five.vercel.app. Inspection of the page
@@ -98,7 +98,7 @@ Entry shape:
 - Why-caveats: no license = all rights reserved by default; flagged to seek an
   explicit grant before shipping copied source commercially, and noted that the
   state taxonomy (the genuinely reusable part) is not copyrightable.
-- Result: `references/wiki/lib/beautiful-ui/usage.md` + `references/raw/beautiful-ui.md`.
+- Result: `references/wiki/lib/beautiful-ui/beautiful-ui-usage.md` + `references/raw/beautiful-ui.md`.
 
 ### 2026-07-30 | React Bits: dependency contract framed as the headline caveat
 - Context: reactbits.dev advertises "minimal dependencies … tree-shakeable", but
@@ -114,7 +114,7 @@ Entry shape:
   scroll reveals / particle backgrounds are the highest-risk category for
   vestibular discomfort; since copy-paste means you own the file, the guidance is
   to add the gate in the file. License is MIT + Commons Clause (same as Canvas UI).
-- Result: `references/wiki/lib/react-bits/usage.md` + `references/raw/react-bits.md`.
+- Result: `references/wiki/lib/react-bits/react-bits-usage.md` + `references/raw/react-bits.md`.
 
 ### 2026-07-30 | Reverses "fully standalone, no cross-links" (2026-07-23)
 - Context: the 2026-07-23 entry "Standalone skill, no cross-links to existing
@@ -242,3 +242,39 @@ Entry shape:
 - Why: the public skill must not carry a private brand, and a reference can be below the gate:
   its secondary gray measured 2.55:1 (fails AA) and its master clips at +0.1 dBTP.
 - Result: HyperFrames' contrast gate caught the copied grays on the first run; darker grays passed.
+
+### 2026-11-23 | Unique concept stems instead of a shared `animation` / `usage`
+- Context: lint warned 12 times that `animation` (5 lang files) and `usage` (9 lib files) were
+  reused across categories, and the template asks for 2-5 word stems.
+- Options: change the shared lint.sh (21 skills carry copies), add a per-skill allowlist, or rename.
+- Chose: rename to `<category>-animation` and `<category>-usage` (for example `lang/css/animation.md`
+  -> `lang/css/css-animation.md`, `lib/beams/usage.md` -> `lib/beams/beams-usage.md`). Older log
+  entries keep the old paths.
+- Why: the rename is local and needs no exception. The CLI used to deep-merge `references/wiki/` on
+  update and keep the old files next to the new ones. The CLI fix that shipped with this change drops
+  a preserved file when it matches the previous release byte for byte and the new release no longer
+  ships it. Files the user edited are kept. No migration script, because nothing runs one on update.
+- Result: lint 0 hard, 0 soft (the 13th finding was `raw/chatterbox.md` uncited; `sound.md` cites it now).
+
+### 2026-11-23 | A stall rule in the gate, not a higher cap
+- Context: the cap-8 test film went 8, 8, 8, then 9 of 11 units over its last renders. It exited 4
+  with s05-fix and s05->s06 at 7. s05-fix went 7 -> 8 -> 7 when fresh critics disagreed on beat order.
+- Options: raise max_iterations again, keep a critic for several rounds, or detect the stall.
+- Chose: video-gate.py keeps counted scores per iteration in `.loop/scores.json`. A unit that fails at
+  or below a score it already failed at is reported as `stall`, with the instruction to rewrite its
+  PLAN row with the user. Exit codes stay the same.
+- Why: the lesson from that run was that the last units need a fixed beat order, not more renders.
+  Rising scores (6 -> 7) still count as progress, so a slow climb is not cut off.
+- Result: hermetic test 26 checks (progress, a 7 -> 8 -> 7 stall, and a PLAN edit clearing it).
+
+### 2026-11-23 | Isometric scenes: SVG by default, Three.js on a real camera need
+- Context: Carter Stonecipher's isometric-3d-models skill builds demo scenes in SVG and argues against
+  Three.js. The maintainer wants this skill to own all Three.js work too.
+- Options: a separate three.js concept, a second skill, or one concept with a renderer choice.
+- Chose: one concept, `scene/isometric/isometric-demo-scenes.md`, with a renderer table. Three.js is
+  used for orbit cameras, lights, GLB models or very large object counts. The clock, triggers and API
+  carry over unchanged.
+- Why: one recipe and one verification path. Raw source kept whole with his attribution. One retail
+  chain name was generalized because this registry is public.
+- Result: added the fixes the source lacked: seeded noise, postMessage origin check, pausing offscreen,
+  reduced motion, and headless Chrome screenshots at checkpoints.

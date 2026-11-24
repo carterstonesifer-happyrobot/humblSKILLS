@@ -13,7 +13,8 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 
 - **lang** -> `css`, `html`, `js`, `react`, `ts`
 - **lib** -> `beams`, `beautiful-ui`, `canvas-ui`, `gooey`, `metal`, `motion-react`, `orbs`, `react-bits`, `transitions`
-- **motion** -> `isometric`, `principles`
+- **motion** -> `principles`
+- **scene** -> `isometric`
 - **video** -> `loop`
 
 ## Wiki
@@ -22,75 +23,77 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 
 #### css
 
-- [animation.md](wiki/lang/css/animation.md) - CSS Animation: Native-First Motion
+- [css-animation.md](wiki/lang/css/css-animation.md) - CSS Animation: Native-First Motion
 
 #### html
 
-- [animation.md](wiki/lang/html/animation.md) - HTML Animation: Native Elements That Animate
+- [html-animation.md](wiki/lang/html/html-animation.md) - HTML Animation: Native Elements That Animate
 
 #### js
 
-- [animation.md](wiki/lang/js/animation.md) - JavaScript Animation: Web Animations API First
+- [js-animation.md](wiki/lang/js/js-animation.md) - JavaScript Animation: Web Animations API First
 
 #### react
 
-- [animation.md](wiki/lang/react/animation.md) - React Animation: CSS First, Motion When It Earns It
+- [react-animation.md](wiki/lang/react/react-animation.md) - React Animation: CSS First, Motion When It Earns It
 
 #### ts
 
-- [animation.md](wiki/lang/ts/animation.md) - TypeScript Animation: Typed Motion Primitives
+- [ts-animation.md](wiki/lang/ts/ts-animation.md) - TypeScript Animation: Typed Motion Primitives
 
 ### lib
 
 #### beams
 
-- [usage.md](wiki/lib/beams/usage.md) - border-beam: Animated Border Glow
+- [beams-usage.md](wiki/lib/beams/beams-usage.md) - border-beam: Animated Border Glow
 
 #### beautiful-ui
 
-- [usage.md](wiki/lib/beautiful-ui/usage.md) - Beautiful UI: Copy-Paste Primitives for AI-Native Interfaces
+- [beautiful-ui-usage.md](wiki/lib/beautiful-ui/beautiful-ui-usage.md) - Beautiful UI: Copy-Paste Primitives for AI-Native Interfaces
 
 #### canvas-ui
 
-- [usage.md](wiki/lib/canvas-ui/usage.md) - Canvas UI: Creative Canvas & WebGL Effects
+- [canvas-ui-usage.md](wiki/lib/canvas-ui/canvas-ui-usage.md) - Canvas UI: Creative Canvas & WebGL Effects
 
 #### gooey
 
-- [usage.md](wiki/lib/gooey/usage.md) - liquid-gooey: Metaball Merge and Liquid Trails
+- [gooey-usage.md](wiki/lib/gooey/gooey-usage.md) - liquid-gooey: Metaball Merge and Liquid Trails
 
 #### metal
 
-- [usage.md](wiki/lib/metal/usage.md) - metal-fx: Liquid-Metal Shader Accent
+- [metal-usage.md](wiki/lib/metal/metal-usage.md) - metal-fx: Liquid-Metal Shader Accent
 
 #### motion-react
 
-- [usage.md](wiki/lib/motion-react/usage.md) - Motion for React: Springs, Layout, and Exit Animations
+- [motion-react-usage.md](wiki/lib/motion-react/motion-react-usage.md) - Motion for React: Springs, Layout, and Exit Animations
 
 #### orbs
 
-- [usage.md](wiki/lib/orbs/usage.md) - thinking-orbs: Agent Status Indicators
+- [orbs-usage.md](wiki/lib/orbs/orbs-usage.md) - thinking-orbs: Agent Status Indicators
 
 #### react-bits
 
-- [usage.md](wiki/lib/react-bits/usage.md) - React Bits: 140+ Copy-Paste Animated React Components
+- [react-bits-usage.md](wiki/lib/react-bits/react-bits-usage.md) - React Bits: 140+ Copy-Paste Animated React Components
 
 #### transitions
 
-- [usage.md](wiki/lib/transitions/usage.md) - transitions.dev: Framework-Agnostic CSS Transitions
+- [transitions-usage.md](wiki/lib/transitions/transitions-usage.md) - transitions.dev: Framework-Agnostic CSS Transitions
 
 ### motion
-
-#### isometric
-
-- [build-kit.md](wiki/motion/isometric/build-kit.md) - Isometric Build Kit: Write the Engine, Sprites, and Chart Helpers
-- [demo-scenes.md](wiki/motion/isometric/demo-scenes.md) - Isometric Demo Scenes: SVG Scenes Driven by a Sim Clock
-- [nextjs-components.md](wiki/motion/isometric/nextjs-components.md) - Isometric Scenes as Next.js Components with Charts and Visual Aids
 
 #### principles
 
 - [accessibility.md](wiki/motion/principles/accessibility.md) - Reduced Motion and the Accessibility Floor
 - [design.md](wiki/motion/principles/design.md) - Deliberate Motion: Orchestration Over Scatter
 - [performance.md](wiki/motion/principles/performance.md) - 60fps Motion: Animate Only Compositor Properties
+
+### scene
+
+#### isometric
+
+- [isometric-build-kit.md](wiki/scene/isometric/isometric-build-kit.md) - Isometric Build Kit: Write the Engine, Sprites, and Chart Helpers
+- [isometric-demo-scenes.md](wiki/scene/isometric/isometric-demo-scenes.md) - Isometric Demo Scenes: SVG First, Three.js When Earned
+- [isometric-nextjs-components.md](wiki/scene/isometric/isometric-nextjs-components.md) - Isometric Scenes as Next.js Components with Charts and Visual Aids
 
 ### video
 
@@ -107,28 +110,28 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 
 ## Raw Sources
 
-- [beautiful-ui.md](raw/beautiful-ui.md) - cited by: references/wiki/lib/beautiful-ui/usage.md
-- [border-beam.md](raw/border-beam.md) - cited by: references/wiki/lib/beams/usage.md
-- [canvas-ui.md](raw/canvas-ui.md) - cited by: references/wiki/lib/canvas-ui/usage.md
-- [chatterbox.md](raw/chatterbox.md) - (not cited; orphan)
+- [beautiful-ui.md](raw/beautiful-ui.md) - cited by: references/wiki/lib/beautiful-ui/beautiful-ui-usage.md
+- [border-beam.md](raw/border-beam.md) - cited by: references/wiki/lib/beams/beams-usage.md
+- [canvas-ui.md](raw/canvas-ui.md) - cited by: references/wiki/lib/canvas-ui/canvas-ui-usage.md
+- [chatterbox.md](raw/chatterbox.md) - cited by: references/wiki/video/loop/sound.md
 - [claude-remotion-skill.md](raw/claude-remotion-skill.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/self-critique.md
 - [earshot.md](raw/earshot.md) - cited by: references/wiki/video/loop/plan.md, references/wiki/video/loop/reference-style.md, references/wiki/video/loop/self-critique.md, references/wiki/video/loop/sound.md
-- [frontend-design-motion-principles.md](raw/frontend-design-motion-principles.md) - cited by: references/wiki/lang/react/animation.md, references/wiki/motion/principles/design.md
+- [frontend-design-motion-principles.md](raw/frontend-design-motion-principles.md) - cited by: references/wiki/lang/react/react-animation.md, references/wiki/motion/principles/design.md
 - [hyperframes-motion-reel-skill.md](raw/hyperframes-motion-reel-skill.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/sound.md
 - [hyperframes-planning.md](raw/hyperframes-planning.md) - cited by: references/wiki/video/loop/plan.md, references/wiki/video/loop/reference-style.md
 - [hyperframes.md](raw/hyperframes.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/render-engine.md, references/wiki/video/loop/self-critique.md, references/wiki/video/loop/sound.md
-- [isometric-3d-models-SKILL.md](raw/isometric-3d-models-SKILL.md) - cited by: references/wiki/motion/isometric/build-kit.md, references/wiki/motion/isometric/demo-scenes.md, references/wiki/motion/isometric/nextjs-components.md
-- [liquid-gooey.md](raw/liquid-gooey.md) - cited by: references/wiki/lib/gooey/usage.md
-- [metal-fx.md](raw/metal-fx.md) - cited by: references/wiki/lib/metal/usage.md
-- [motion-react.md](raw/motion-react.md) - cited by: references/wiki/lib/motion-react/usage.md
-- [nextjs-isometric-engine-details.md](raw/nextjs-isometric-engine-details.md) - cited by: references/wiki/motion/isometric/build-kit.md
-- [nextjs-isometric-port-notes.md](raw/nextjs-isometric-port-notes.md) - cited by: references/wiki/motion/isometric/build-kit.md, references/wiki/motion/isometric/nextjs-components.md
-- [react-bits.md](raw/react-bits.md) - cited by: references/wiki/lib/react-bits/usage.md
+- [isometric-3d-models-skill.md](raw/isometric-3d-models-skill.md) - cited by: references/wiki/scene/isometric/isometric-build-kit.md, references/wiki/scene/isometric/isometric-demo-scenes.md, references/wiki/scene/isometric/isometric-nextjs-components.md
+- [liquid-gooey.md](raw/liquid-gooey.md) - cited by: references/wiki/lib/gooey/gooey-usage.md
+- [metal-fx.md](raw/metal-fx.md) - cited by: references/wiki/lib/metal/metal-usage.md
+- [motion-react.md](raw/motion-react.md) - cited by: references/wiki/lib/motion-react/motion-react-usage.md
+- [nextjs-isometric-engine-details.md](raw/nextjs-isometric-engine-details.md) - cited by: references/wiki/scene/isometric/isometric-build-kit.md
+- [nextjs-isometric-port-notes.md](raw/nextjs-isometric-port-notes.md) - cited by: references/wiki/scene/isometric/isometric-build-kit.md, references/wiki/scene/isometric/isometric-nextjs-components.md
+- [react-bits.md](raw/react-bits.md) - cited by: references/wiki/lib/react-bits/react-bits-usage.md
 - [reference-product-film-2026-10-20.md](raw/reference-product-film-2026-10-20.md) - cited by: references/wiki/video/loop/reference-style.md
-- [thinking-orbs.md](raw/thinking-orbs.md) - cited by: references/wiki/lib/orbs/usage.md
-- [transitions-dev.md](raw/transitions-dev.md) - cited by: references/wiki/lang/ts/animation.md, references/wiki/lib/transitions/usage.md, references/wiki/motion/principles/accessibility.md
+- [thinking-orbs.md](raw/thinking-orbs.md) - cited by: references/wiki/lib/orbs/orbs-usage.md
+- [transitions-dev.md](raw/transitions-dev.md) - cited by: references/wiki/lang/ts/ts-animation.md, references/wiki/lib/transitions/transitions-usage.md, references/wiki/motion/principles/accessibility.md
 - [video-loop-brief.md](raw/video-loop-brief.md) - cited by: references/wiki/video/loop/plan.md, references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/render-engine.md, references/wiki/video/loop/self-critique.md, references/wiki/video/loop/sound.md
-- [web-animation-standards.md](raw/web-animation-standards.md) - cited by: references/wiki/lang/css/animation.md, references/wiki/lang/html/animation.md, references/wiki/lang/js/animation.md, references/wiki/lang/react/animation.md, references/wiki/lang/ts/animation.md, references/wiki/motion/principles/accessibility.md, references/wiki/motion/principles/performance.md
+- [web-animation-standards.md](raw/web-animation-standards.md) - cited by: references/wiki/lang/css/css-animation.md, references/wiki/lang/html/html-animation.md, references/wiki/lang/js/js-animation.md, references/wiki/lang/react/react-animation.md, references/wiki/lang/ts/ts-animation.md, references/wiki/motion/principles/accessibility.md, references/wiki/motion/principles/performance.md
 
 ---
 

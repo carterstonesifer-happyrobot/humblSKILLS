@@ -143,14 +143,25 @@ Entry shape:
 
 [LINT 2026-10-20] 23 wiki, 19 raw. Hard: 0, Soft: 13. Regenerated _index.md.
 
-[INGEST 2026-11-23] Added isometric-3d-models skill as raw source and distilled wiki/motion/isometric/demo-scenes.md; routed from SKILL.md so animation skills stay in one place.
+[LINT 2026-11-23] 23 wiki, 19 raw. Hard: 0, Soft: 13. Regenerated _index.md.
 
-[LINT 2026-11-23] 24 wiki, 20 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+[LINT 2026-11-23] 23 wiki, 19 raw. Hard: 0, Soft: 0. Regenerated _index.md.
 
-[INGEST 2026-11-23] Inspected three Next.js ports of the standalone isometric scenes; added raw/nextjs-isometric-port-notes.md and wiki/motion/isometric/nextjs-components.md (engine/wrapper/board split, clock policy, chart, Gantt, stat row, tooltip and selection aids).
+[UPDATE 2026-11-23] Lint clean-up, gate stall rule, isometric scenes (v0.7.0).
+  - Renamed 14 wiki concepts to unique stems (`<category>-animation`, `<category>-usage`); sound.md
+    cites raw/chatterbox.md. Lint 0 hard, 0 soft.
+  - video-gate.py: per-iteration score history in .loop/scores.json and a `stall` line for a unit
+    failing again at a score it already failed at (the exit-4 pattern of the cap-8 film); a PLAN.md edit resets it. 26-check test.
+  - New raw/isometric-3d-models-skill.md (author Carter Stonecipher) and wiki
+    scene/isometric/isometric-demo-scenes.md. SKILL.md routes isometric, 3D, Three.js and warehouse
+    visualization requests to it.
 
-[LINT 2026-11-23] 25 wiki, 21 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+[LINT 2026-11-23] 24 wiki, 20 raw. Hard: 0, Soft: 0. Regenerated _index.md.
 
-[INGEST 2026-11-23] Added wiki/motion/isometric/build-kit.md (how to write projection, primitives, sprites, layering, frame function, chart/Gantt helpers, plus a quality bar) from raw/nextjs-isometric-engine-details.md, so the skill stays code-free yet reproduces the ported scenes' quality.
+[INGEST 2026-11-24] Merged develop into feat/smart-animation-isometric-scenes. Dropped this branch's duplicate raw copy and
+  motion/isometric/demo-scenes.md (superseded by scene/isometric/isometric-demo-scenes.md). Kept and moved the two
+  additions to scene/isometric with unique stems: isometric-build-kit.md (complete helper, sprite, layering, frame and
+  chart/Gantt code plus a quality bar, from raw/nextjs-isometric-engine-details.md) and isometric-nextjs-components.md
+  (engine / wrapper / board split, clock policy, linked chart and Gantt aids, from raw/nextjs-isometric-port-notes.md).
 
-[LINT 2026-11-23] 26 wiki, 22 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+[LINT 2026-11-24] 26 wiki, 22 raw. Hard: 0, Soft: 0. Regenerated _index.md.

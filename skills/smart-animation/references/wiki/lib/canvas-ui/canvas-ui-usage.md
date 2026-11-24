@@ -2,7 +2,7 @@
 title: "Canvas UI: Creative Canvas & WebGL Effects"
 context: lib
 category: canvas-ui
-concept: usage
+concept: canvas-ui-usage
 description: "Canvas UI (canvasui.dev): 27 copy-paste canvas/WebGL effects over real HTML. shadcn install, React/Vue/Svelte/vanilla, experimental-API caveat, license."
 tags: canvas-ui, webgl, html-in-canvas, shadcn, particle, hero
 sources:

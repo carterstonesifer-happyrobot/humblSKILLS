@@ -2,7 +2,7 @@
 title: "JavaScript Animation: Web Animations API First"
 context: lang
 category: js
-concept: animation
+concept: js-animation
 description: "Vanilla JS motion: use element.animate (WAAPI) over rAF tweens, IntersectionObserver reveals, and startViewTransition. No jQuery."
 tags: javascript, waapi, requestanimationframe, intersectionobserver, view-transitions
 sources:
@@ -41,7 +41,7 @@ await anim.finished;        // sequence follow-up work off the Promise
 Patterns:
 - **Reveal-on-scroll:** `IntersectionObserver` adds a class that triggers a CSS
   transition — the JS just toggles state. (In CSS-capable targets prefer
-  `animation-timeline: view()`; see `lang/css/animation`.)
+  `animation-timeline: view()`; see `lang/css/css-animation.md`.)
 - **DOM/route changes:** wrap the mutation in
   `document.startViewTransition(() => updateDOM())` for an automatic crossfade.
 - **Control:** `.play() / .pause() / .reverse() / .cancel()`, `.playbackRate`,

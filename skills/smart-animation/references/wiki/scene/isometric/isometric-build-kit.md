@@ -1,14 +1,14 @@
 ---
 title: "Isometric Build Kit: Write the Engine, Sprites, and Chart Helpers"
-context: motion
+context: scene
 category: isometric
-concept: build-kit
+concept: isometric-build-kit
 description: "How to write the code an isometric demo scene needs, from projection and box helpers to actor layering, dirty-checked setTime, status tags, and chart geometry, plus the quality bar a finished scene must meet."
 tags: isometric, svg, engine, sprites, layering, chart, gantt, quality-bar, typescript
 sources:
   - "references/raw/nextjs-isometric-engine-details.md"
   - "references/raw/nextjs-isometric-port-notes.md"
-  - "references/raw/isometric-3d-models-SKILL.md"
+  - "references/raw/isometric-3d-models-skill.md"
 last_ingested: 2026-11-23
 ---
 
@@ -255,11 +255,11 @@ complete (muted); invalid drags turn red and are not applied.
 | Status | each status shown 3+ ways, tags never overlap, colors semantic |
 | Determinism | reload and scrub to the same minute: identical frame |
 | Performance | world built once; a frame writes only changed attributes; about 30 fps repaint |
-| Accessibility | objects focusable with Enter/Space, aria-labels carry status, reduced motion shows static emphasis |
+| Accessibility | objects focusable with Enter/Space, aria-labels carry status, reduced motion shows static emphasis; the SVG is `role="group"` when objects inside are focusable (`role="img"` hides them from assistive tech), `role="img"` only for a non-interactive scene |
 | Proof | screenshot at each storyline minute in a real browser and compare with the spec |
 
 ## Sources
 
 - `references/raw/nextjs-isometric-engine-details.md` - projection constants, box face order, sprite and shadow sizes, seeded clutter, itinerary and door math, tag stagger, redundant status, chart helpers.
 - `references/raw/nextjs-isometric-port-notes.md` - engine contract, dirty-checked frames, reduced-motion handling.
-- `references/raw/isometric-3d-models-SKILL.md` - the recipe whose stubbed helpers this concept completes.
+- `references/raw/isometric-3d-models-skill.md` - the recipe whose stubbed helpers this concept completes.

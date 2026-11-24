@@ -1,19 +1,19 @@
 ---
 title: "Isometric Scenes as Next.js Components with Charts and Visual Aids"
-context: motion
+context: scene
 category: isometric
-concept: nextjs-components
+concept: isometric-nextjs-components
 description: "Port a standalone isometric HTML scene into React/Next.js: an imperative SVG engine, a client wrapper, a board that owns the sim clock, plus a linked chart, Gantt, stats, and legend."
 tags: isometric, nextjs, react, svg, sim-clock, chart, gantt, tooltip, reduced-motion
 sources:
   - "references/raw/nextjs-isometric-port-notes.md"
-  - "references/raw/isometric-3d-models-SKILL.md"
+  - "references/raw/isometric-3d-models-skill.md"
 last_ingested: 2026-11-23
 ---
 
 ## Isometric Scenes as Next.js Components
 
-The standalone HTML recipe (`demo-scenes.md`) is the prototype. In a Next.js app
+The standalone HTML recipe (`isometric-demo-scenes.md`) is the prototype. In a Next.js app
 the same scene becomes three layers: a **pure model** (`series`, `statusOf`), an
 **imperative SVG engine** driven by a sim minute, and a **board** that owns the
 clock and renders the scene next to a chart, Gantt, and stat row. Keep the
@@ -47,7 +47,7 @@ export function Scene({ scenario, simMin, selectedId, onSelect }: SceneProps) {
 ```
 
 The engine internals (projection, primitives, sprites, layering, frame function,
-chart and Gantt helpers) and the quality bar are in `build-kit.md`.
+chart and Gantt helpers) and the quality bar are in `isometric-build-kit.md`.
 
 ### Structure
 
@@ -93,4 +93,4 @@ Add each one only if it answers a question the scene alone cannot.
 ## Sources
 
 - `references/raw/nextjs-isometric-port-notes.md` - what repeated across three real ports (layout, clock policy, tooltips, chart helpers, verification).
-- `references/raw/isometric-3d-models-SKILL.md` - the standalone recipe these components port.
+- `references/raw/isometric-3d-models-skill.md` - the standalone recipe these components port.

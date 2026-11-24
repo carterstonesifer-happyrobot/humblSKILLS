@@ -2,7 +2,7 @@
 title: "metal-fx: Liquid-Metal Shader Accent"
 context: lib
 category: metal
-concept: usage
+concept: metal-usage
 description: "metal-fx (React/WebGL): a liquid-metal shader for ONE premium accent. Install, variants/presets, the reduced-motion gap you must wire manually."
 tags: metal-fx, react, webgl, shader, premium, cta
 sources:
