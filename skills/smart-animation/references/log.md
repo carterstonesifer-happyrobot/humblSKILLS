@@ -146,3 +146,7 @@ Entry shape:
 [INGEST 2026-11-23] Added isometric-3d-models skill as raw source and distilled wiki/motion/isometric/demo-scenes.md; routed from SKILL.md so animation skills stay in one place.
 
 [LINT 2026-11-23] 24 wiki, 20 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+
+[INGEST 2026-11-23] Inspected three Next.js ports of the standalone isometric scenes; added raw/nextjs-isometric-port-notes.md and wiki/motion/isometric/nextjs-components.md (engine/wrapper/board split, clock policy, chart, Gantt, stat row, tooltip and selection aids).
+
+[LINT 2026-11-23] 25 wiki, 21 raw. Hard: 0, Soft: 13. Regenerated _index.md.

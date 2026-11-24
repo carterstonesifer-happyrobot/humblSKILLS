@@ -81,6 +81,10 @@ Motion here must still follow the shared principles: purposeful, compositor-
 friendly where it touches the DOM, and a reduced-motion path for the
 control-bar playback (pause by default under `prefers-reduced-motion`).
 
+In a Next.js app, port the scene instead of embedding the HTML: read
+`nextjs-components.md` for the engine / wrapper / board split and the chart,
+Gantt, and stat-row aids.
+
 ## Sources
 
 - `references/raw/isometric-3d-models-SKILL.md` - the full recipe (kit code

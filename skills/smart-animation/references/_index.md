@@ -83,6 +83,7 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 #### isometric
 
 - [demo-scenes.md](wiki/motion/isometric/demo-scenes.md) - Isometric Demo Scenes: SVG Scenes Driven by a Sim Clock
+- [nextjs-components.md](wiki/motion/isometric/nextjs-components.md) - Isometric Scenes as Next.js Components with Charts and Visual Aids
 
 #### principles
 
@@ -115,10 +116,11 @@ Context -> categories. See `## Wiki` below for the concept enumeration.
 - [hyperframes-motion-reel-skill.md](raw/hyperframes-motion-reel-skill.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/sound.md
 - [hyperframes-planning.md](raw/hyperframes-planning.md) - cited by: references/wiki/video/loop/plan.md, references/wiki/video/loop/reference-style.md
 - [hyperframes.md](raw/hyperframes.md) - cited by: references/wiki/video/loop/reference-assets.md, references/wiki/video/loop/render-engine.md, references/wiki/video/loop/self-critique.md, references/wiki/video/loop/sound.md
-- [isometric-3d-models-SKILL.md](raw/isometric-3d-models-SKILL.md) - cited by: references/wiki/motion/isometric/demo-scenes.md
+- [isometric-3d-models-SKILL.md](raw/isometric-3d-models-SKILL.md) - cited by: references/wiki/motion/isometric/demo-scenes.md, references/wiki/motion/isometric/nextjs-components.md
 - [liquid-gooey.md](raw/liquid-gooey.md) - cited by: references/wiki/lib/gooey/usage.md
 - [metal-fx.md](raw/metal-fx.md) - cited by: references/wiki/lib/metal/usage.md
 - [motion-react.md](raw/motion-react.md) - cited by: references/wiki/lib/motion-react/usage.md
+- [nextjs-isometric-port-notes.md](raw/nextjs-isometric-port-notes.md) - cited by: references/wiki/motion/isometric/nextjs-components.md
 - [react-bits.md](raw/react-bits.md) - cited by: references/wiki/lib/react-bits/usage.md
 - [reference-product-film-2026-10-20.md](raw/reference-product-film-2026-10-20.md) - cited by: references/wiki/video/loop/reference-style.md
 - [thinking-orbs.md](raw/thinking-orbs.md) - cited by: references/wiki/lib/orbs/usage.md
