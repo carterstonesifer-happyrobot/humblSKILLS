@@ -290,6 +290,7 @@ func (e *Engine) installOne(
 	var toWrite []installPlanTarget
 	var skipped []TargetResult
 	preserveSource := ""
+	prevSHA := "" // the revision preserveSource was installed from, for dropping files upstream removed
 	renamedFrom := ""
 	for _, pg := range pendings {
 		existing := m.FindOne(skill.Name, pg.adapter.Name, pg.target.Scope)
@@ -326,8 +327,10 @@ func (e *Engine) installOne(
 			existingPath = existing.Path
 			if existing.StorePath != "" {
 				preserveSource = existing.StorePath
+				prevSHA = existing.SourceSHA
 			} else if preserveSource == "" {
 				preserveSource = existing.Path
+				prevSHA = existing.SourceSHA
 			}
 		} else if preserveSource == "" && realDirExists(pg.final) {
 			preserveSource = pg.final
@@ -391,7 +394,7 @@ func (e *Engine) installOne(
 	// "I installed a new agent and want my skills on it too".
 	linkOnly := !opts.Force && storeIsCurrent(m, skill, storePath)
 	if !linkOnly {
-		if err := e.refreshStore(reg, skill, storePath, preserveSource, renamedFrom, toWrite, opts); err != nil {
+		if err := e.refreshStore(reg, skill, storePath, preserveSource, prevSHA, renamedFrom, toWrite, opts); err != nil {
 			return nil, err
 		}
 		// Sibling targets on other platforms point at this same store, so the
@@ -485,7 +488,7 @@ func (e *Engine) installOne(
 func (e *Engine) refreshStore(
 	reg *registry.Registry,
 	skill registry.Skill,
-	storePath, preserveSource, renamedFrom string,
+	storePath, preserveSource, prevSHA, renamedFrom string,
 	toWrite []installPlanTarget,
 	opts ExecuteOpts,
 ) error {
@@ -526,7 +529,11 @@ func (e *Engine) refreshStore(
 				return fmt.Errorf("copy store staging: %w", err)
 			}
 			if len(preserveList) > 0 {
-				if err := applyPreserve(preserveSource, perStore, preserveList); err != nil {
+				pristine := e.pristineTree(reg, skill, prevSHA, staging, opts)
+				if pristine != "" {
+					defer os.RemoveAll(pristine)
+				}
+				if err := applyPreserve(preserveSource, perStore, pristine, preserveList); err != nil {
 					return err
 				}
 			}
@@ -551,6 +558,28 @@ func (e *Engine) refreshStore(
 		return fmt.Errorf("place canonical store %s: %w", storePath, err)
 	}
 	return nil
+}
+
+// pristineTree extracts the skill as shipped at prevSHA, so the preserve merge
+// can tell files upstream removed from files the user wrote. "" (keep every
+// user file, the old behavior) when there is no usable previous revision.
+func (e *Engine) pristineTree(reg *registry.Registry, skill registry.Skill, prevSHA, staging string, opts ExecuteOpts) string {
+	if prevSHA == "" || prevSHA == reg.Source.SHA {
+		return ""
+	}
+	dir := staging + "-prev"
+	tarPath, err := e.Fetcher.Fetch(reg.Source.Repo, prevSHA)
+	if err == nil {
+		_ = os.RemoveAll(dir)
+		err = fetch.Extract(tarPath, skill.Path, dir)
+	}
+	if err != nil {
+		_ = os.RemoveAll(dir)
+		opts.OnEvent.emit(Event{Phase: PhaseWarn, Skill: skill.Name,
+			Msg: fmt.Sprintf("previous revision %s unavailable (%v); files it shipped that were since removed are kept", shortSHA(prevSHA), err)})
+		return ""
+	}
+	return dir
 }
 
 // storeHasSkill reports whether storePath holds a real skill (its SKILL.md is
