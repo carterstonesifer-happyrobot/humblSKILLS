@@ -46,6 +46,9 @@ export function Scene({ scenario, simMin, selectedId, onSelect }: SceneProps) {
 }
 ```
 
+The engine internals (projection, primitives, sprites, layering, frame function,
+chart and Gantt helpers) and the quality bar are in `build-kit.md`.
+
 ### Structure
 
 ```

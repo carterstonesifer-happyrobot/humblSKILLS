@@ -150,3 +150,7 @@ Entry shape:
 [INGEST 2026-11-23] Inspected three Next.js ports of the standalone isometric scenes; added raw/nextjs-isometric-port-notes.md and wiki/motion/isometric/nextjs-components.md (engine/wrapper/board split, clock policy, chart, Gantt, stat row, tooltip and selection aids).
 
 [LINT 2026-11-23] 25 wiki, 21 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+
+[INGEST 2026-11-23] Added wiki/motion/isometric/build-kit.md (how to write projection, primitives, sprites, layering, frame function, chart/Gantt helpers, plus a quality bar) from raw/nextjs-isometric-engine-details.md, so the skill stays code-free yet reproduces the ported scenes' quality.
+
+[LINT 2026-11-23] 26 wiki, 22 raw. Hard: 0, Soft: 13. Regenerated _index.md.
