@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.58.1-pre](https://github.com/jjfantini/humblSKILLS/compare/v2.58.0...v2.58.1-pre) (2026-11-24)
+
+
+### Bug Fixes
+
+* **cli:** drop unedited files upstream removed from preserved dirs ([91934a2](https://github.com/jjfantini/humblSKILLS/commit/91934a27c4b195b6c9c798e04af2980aa6345c31))
+* **cli:** drop unedited files upstream removed from preserved dirs ([4d03387](https://github.com/jjfantini/humblSKILLS/commit/4d03387d0e0f2735710cb8680955911306e3d3f9))
+
 ## [2.58.0](https://github.com/jjfantini/humblSKILLS/compare/v2.57.0...v2.58.0) (2026-11-20)
 
 
