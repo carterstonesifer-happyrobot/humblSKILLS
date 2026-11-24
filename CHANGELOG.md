@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.59.0](https://github.com/jjfantini/humblSKILLS/compare/v2.58.1...v2.59.0) (2026-11-24)
+
+
+### Features
+
+* **smart-animation:** isometric/Three.js scenes, gate stall rule, lint clean-up (0.7.0) ([3345330](https://github.com/jjfantini/humblSKILLS/commit/3345330a141dba8dcc51fac1f34bb2181cd6f48e))
+
 ## [2.59.0-pre](https://github.com/jjfantini/humblSKILLS/compare/v2.58.1...v2.59.0-pre) (2026-11-24)
 
 
