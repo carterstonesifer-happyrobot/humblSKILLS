@@ -2,7 +2,7 @@
 title: "liquid-gooey: Metaball Merge and Liquid Trails"
 context: lib
 category: gooey
-concept: usage
+concept: gooey-usage
 description: "liquid-gooey (React): Morph (touching pieces merge like jelly), Move (liquid-rubber trail), and the dissolve modifier. SVG silhouette layer keeps content crisp and interactive; blur-to-gap ratio controls bridging."
 tags: liquid-gooey, react, metaball, gooey, svg-filter, fab, morph, spring
 sources:

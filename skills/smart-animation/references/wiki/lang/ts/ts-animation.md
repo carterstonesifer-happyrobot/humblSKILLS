@@ -2,7 +2,7 @@
 title: "TypeScript Animation: Typed Motion Primitives"
 context: lang
 category: ts
-concept: animation
+concept: ts-animation
 description: "Typing the Web Animations API, typed motion tokens, and a typed reduced-motion helper so animation code stays safe and self-documenting."
 tags: typescript, waapi-types, motion-tokens, reduced-motion, type-safety
 sources:
@@ -13,7 +13,7 @@ last_ingested: 2026-07-23
 
 ## TypeScript Animation: Typed Motion Primitives
 
-Everything in `lang/js/animation` applies; TypeScript adds type safety. The wins
+Everything in `lang/js/js-animation.md` applies; TypeScript adds type safety. The wins
 are: correct WAAPI types (no `as any`), a `const`-typed token union so durations
 and easings are checked at compile time, and a typed reduced-motion helper.
 

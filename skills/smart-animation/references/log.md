@@ -142,3 +142,18 @@ Entry shape:
   plan questions for voice engine and iteration budget, cut/sound/critic lessons in the wiki.
 
 [LINT 2026-10-20] 23 wiki, 19 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+
+[LINT 2026-11-23] 23 wiki, 19 raw. Hard: 0, Soft: 13. Regenerated _index.md.
+
+[LINT 2026-11-23] 23 wiki, 19 raw. Hard: 0, Soft: 0. Regenerated _index.md.
+
+[UPDATE 2026-11-23] Lint clean-up, gate stall rule, isometric scenes (v0.7.0).
+  - Renamed 14 wiki concepts to unique stems (`<category>-animation`, `<category>-usage`); sound.md
+    cites raw/chatterbox.md. Lint 0 hard, 0 soft.
+  - video-gate.py: per-iteration score history in .loop/scores.json and a `stall` line for a unit
+    failing again at a score it already failed at (the exit-4 pattern of the cap-8 film); a PLAN.md edit resets it. 26-check test.
+  - New raw/isometric-3d-models-skill.md (author Carter Stonecipher) and wiki
+    scene/isometric/isometric-demo-scenes.md. SKILL.md routes isometric, 3D, Three.js and warehouse
+    visualization requests to it.
+
+[LINT 2026-11-23] 24 wiki, 20 raw. Hard: 0, Soft: 0. Regenerated _index.md.

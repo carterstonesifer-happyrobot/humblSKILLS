@@ -2,7 +2,7 @@
 title: "border-beam: Animated Border Glow"
 context: lib
 category: beams
-concept: usage
+concept: beams-usage
 description: "border-beam (React): a traveling/breathing glow around an element's border. Install, size/color presets, props, gating with active, vanilla port."
 tags: border-beam, react, border-glow, css-property, cta, attention
 sources:

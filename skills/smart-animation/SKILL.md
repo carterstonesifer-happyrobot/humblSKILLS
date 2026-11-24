@@ -1,29 +1,29 @@
 ---
 name: smart-animation
 description: >
-  Performance-first frontend animation and transition guidance, routed by
-  codebase (HTML, CSS, JavaScript, TypeScript, React) and by ready-made
-  libraries (thinking-orbs, border-beam, metal-fx, liquid-gooey,
-  transitions.dev, Canvas UI, Motion/Framer Motion, React Bits, Beautiful UI), plus a
-  code-built video loop (HyperFrames render, earshot sound, self-critique).
-  Use when adding animations, transitions, page or route transitions, scroll
-  reveals, hover micro-interactions, loading/thinking indicators, or agent UI
-  states (streaming text, tool calls, approval gates); when the user says
-  "animate this", "add motion", "make it feel premium", "page transition",
-  "reveal on scroll", or asks which animation library to use; or for
-  "make a video", "intro video", "launch video", "render to MP4" or
-  sound effects on a video. Enforces compositor-only performance and a
-  reduced-motion floor. For whole-interface
-  design direction use smart-frontend-design. Do NOT use for non-frontend
-  work or static visual design with no motion.
+  Performance-first frontend animation, routed by codebase (HTML, CSS, JS,
+  TS, React) and by ready-made libraries (thinking-orbs, border-beam,
+  metal-fx, liquid-gooey, transitions.dev, Canvas UI, Motion, React Bits,
+  Beautiful UI), plus a code-built video loop (HyperFrames, earshot sound,
+  self-critique) and animated isometric or Three.js scenes. Use when adding
+  animations, page or route transitions, scroll reveals, hover
+  micro-interactions, loading/thinking indicators, or agent UI states
+  (streaming text, tool calls, approval gates); when
+  the user says "animate this", "add motion", "make it feel premium", or asks
+  which animation library to use; for "make a video", "launch video",
+  "render to MP4" or sound on a video; or for "isometric", "3D scene",
+  "Three.js", "warehouse visualization", "digital twin demo". Enforces
+  compositor-only performance and a reduced-motion floor. For whole-interface
+  design use smart-frontend-design. Do NOT use for non-frontend work or
+  static visual design with no motion.
 license: MIT
 compatibility: Requires bash, POSIX utilities (awk, sed, find, grep), python3, writable filesystem at the skill target path. The video loop also needs Node 22+ (npx hyperframes), ffmpeg/ffprobe, Chrome, and for sound a Python with earshot installed (CPU torch, ~1.1 GB models on first listen); narration recommends Chatterbox TTS in its own Python 3.11 venv (ask the user before installing, ~2 GB), with macOS say as the fallback.
 metadata:
   author: jjfantini
-  version: "0.6.0"
+  version: "0.7.0"
   previous_names: ["use-smart-animation"]
   category: design
-  tags: [animation, transitions, frontend, motion, css, react, webgl, performance, accessibility, agent-ui, video, hyperframes, earshot, humblskill]
+  tags: [animation, transitions, frontend, motion, css, react, webgl, performance, accessibility, agent-ui, video, hyperframes, earshot, isometric, threejs, humblskill]
   platforms: [claude-code, cursor, codex]
   preserve:
     - references/raw/
@@ -65,8 +65,8 @@ _Full spec: `references/_brain.md`._
 | Layer        | Role                                | Location                                       |
 |--------------|-------------------------------------|------------------------------------------------|
 | **Core**     | Root structure of the skill         | `SKILL.md`, `references/`, `scripts/`          |
-| **Context**  | Top-level grouping                   | 1st segment under `references/wiki/` (`motion`, `lang`, `lib`) |
-| **Category** | Specific topic within a context      | 2nd segment (`principles`; `css`/`react`/…; `orbs`/`beams`/…) |
+| **Context**  | Top-level grouping                   | 1st segment under `references/wiki/` (`motion`, `lang`, `lib`, `video`, `scene`) |
+| **Category** | Specific topic within a context      | 2nd segment (`principles`; `css`/`react`/…; `orbs`/`beams`/…; `loop`; `isometric`) |
 | **Concept**  | One atomic idea per file             | Filename stem + required frontmatter field     |
 | **Command**  | Deterministic executable script      | `scripts/lint.sh`, `scripts/video-*.{sh,py}`, `scripts/dead-frames.sh` |
 
@@ -79,6 +79,8 @@ _Full spec: `references/_brain.md`._
 - Page/route transitions, scroll reveals, hover micro-interactions, loading states
 - Fixing janky animation (dropped frames) or missing reduced-motion handling
 - Making a short animation video in code (intro, launch film, explainer, logo sting) and rendering it to MP4
+- An animated isometric or 3D scene of a place for a demo or visualization (warehouse, distribution
+  center, pharmacy, factory, dock), or any Three.js work
 
 ## How to Use
 
@@ -89,23 +91,29 @@ and `references/wiki/motion/principles/accessibility.md` (reduced-motion floor +
 
 **Then route by the codebase language:**
 
-- **CSS-only / static site:** Read `references/wiki/lang/css/animation.md`
-- **Plain HTML:** Read `references/wiki/lang/html/animation.md`
-- **Vanilla JavaScript:** Read `references/wiki/lang/js/animation.md`
-- **TypeScript (non-React):** Read `references/wiki/lang/ts/animation.md`
-- **React / Next.js:** Read `references/wiki/lang/react/animation.md`
+- **CSS-only / static site:** Read `references/wiki/lang/css/css-animation.md`
+- **Plain HTML:** Read `references/wiki/lang/html/html-animation.md`
+- **Vanilla JavaScript:** Read `references/wiki/lang/js/js-animation.md`
+- **TypeScript (non-React):** Read `references/wiki/lang/ts/ts-animation.md`
+- **React / Next.js:** Read `references/wiki/lang/react/react-animation.md`
 
 **And route by the effect / library you need:**
 
-- **Thinking / loading indicator for an AI or agent UI:** Read `references/wiki/lib/orbs/usage.md` (thinking-orbs)
-- **Animated glow around a card, button, or input border:** Read `references/wiki/lib/beams/usage.md` (border-beam)
-- **Metallic / liquid-metal accent on one premium element:** Read `references/wiki/lib/metal/usage.md` (metal-fx)
-- **Elements that merge like drops of liquid (expanding FAB cluster, morphing card, slider thumb with a rubbery trail):** Read `references/wiki/lib/gooey/usage.md` (liquid-gooey)
-- **Standard UI transitions (modals, toasts, tabs) in any stack:** Read `references/wiki/lib/transitions/usage.md` (transitions.dev)
-- **Creative canvas/WebGL effects over content (particle reveal, liquid, glass, shatter) for a hero or signature moment:** Read `references/wiki/lib/canvas-ui/usage.md` (Canvas UI)
-- **Exit animations, layout/FLIP animation, spring physics, or interruptible orchestration in React:** Read `references/wiki/lib/motion-react/usage.md` (Motion, formerly Framer Motion) — the four things CSS cannot do
-- **A specific finished effect (split-text reveal, aurora background, magnet button) from a large catalog:** Read `references/wiki/lib/react-bits/usage.md` (React Bits) — check the per-component dependency cost first
-- **AI / agent interface states — thinking traces, streaming text, tool chips, approval gates, confidence, context cards, diffs:** Read `references/wiki/lib/beautiful-ui/usage.md` (Beautiful UI)
+- **Thinking / loading indicator for an AI or agent UI:** Read `references/wiki/lib/orbs/orbs-usage.md` (thinking-orbs)
+- **Animated glow around a card, button, or input border:** Read `references/wiki/lib/beams/beams-usage.md` (border-beam)
+- **Metallic / liquid-metal accent on one premium element:** Read `references/wiki/lib/metal/metal-usage.md` (metal-fx)
+- **Elements that merge like drops of liquid (expanding FAB cluster, morphing card, slider thumb with a rubbery trail):** Read `references/wiki/lib/gooey/gooey-usage.md` (liquid-gooey)
+- **Standard UI transitions (modals, toasts, tabs) in any stack:** Read `references/wiki/lib/transitions/transitions-usage.md` (transitions.dev)
+- **Creative canvas/WebGL effects over content (particle reveal, liquid, glass, shatter) for a hero or signature moment:** Read `references/wiki/lib/canvas-ui/canvas-ui-usage.md` (Canvas UI)
+- **Exit animations, layout/FLIP animation, spring physics, or interruptible orchestration in React:** Read `references/wiki/lib/motion-react/motion-react-usage.md` (Motion, formerly Framer Motion) — the four things CSS cannot do
+- **A specific finished effect (split-text reveal, aurora background, magnet button) from a large catalog:** Read `references/wiki/lib/react-bits/react-bits-usage.md` (React Bits) — check the per-component dependency cost first
+- **AI / agent interface states — thinking traces, streaming text, tool chips, approval gates, confidence, context cards, diffs:** Read `references/wiki/lib/beautiful-ui/beautiful-ui-usage.md` (Beautiful UI)
+
+**And route scene work (an animated place, live in the browser):**
+
+- **Isometric or 3D scene, warehouse or site visualization, digital-twin demo, any Three.js work:**
+  Read `references/wiki/scene/isometric/isometric-demo-scenes.md` (SVG first, Three.js when the camera
+  must move; sim clock, data triggers, SCENE API, headless screenshots at checkpoints).
 
 **And route video work (a rendered MP4, not live UI motion):**
 
@@ -135,7 +143,7 @@ Read `references/_brain.md`. **Wiki concept file shape:** Read `references/_temp
   check -> draft render -> dead frames, earshot listening, frames for changed scenes and cuts -> gate.
   Exit 0 pass, 1 plan not ready or tool error, 2 waiting for scores, 3 failing, 4 iteration cap.
   `--deliver` then renders the final, re-checks it, and writes a poster and review frames. Set `EARSHOT_PYTHON`.
-- `scripts/tests/test_video_gate.py` — hermetic gate test (23 checks, no HyperFrames or earshot).
+- `scripts/tests/test_video_gate.py` — hermetic gate test (26 checks, no HyperFrames or earshot).
 - `scripts/dead-frames.sh <mp4>` — freeze/black stretches from the encoded pixels (TSV).
 - `scripts/video-reference.sh <ref.mp4> <dir>` — measure a reference video (cuts, palette and small
   accents, loudness, earshot sound summary, motion strips) into a STYLE.md to fill.
@@ -147,20 +155,20 @@ Read `references/_brain.md`. **Wiki concept file shape:** Read `references/_temp
 ### Example 1: "Add a page-load animation to my React landing page"
 
 1. Read the three `motion/principles/*` concepts (deliberate, performant, accessible).
-2. Read `lang/react/animation.md` — decision rule says use CSS for the entrance,
+2. Read `lang/react/react-animation.md` — decision rule says use CSS for the entrance,
    or Motion only if you need staggered orchestration/exit.
 3. Implement ONE orchestrated entrance (staggered children), compositor-only
    (`transform`/`opacity`), with a `prefers-reduced-motion` fallback.
-4. If they want a premium accent on the CTA, read `lib/metal/usage.md` and gate
+4. If they want a premium accent on the CTA, read `lib/metal/metal-usage.md` and gate
    the shader with `paused` under reduced motion.
 5. Append a `log.md` entry; if you measured LCP/fps, add a `patterns.md` entry.
 
 ### Example 2: "Make my modals and toasts feel polished in a plain HTML/CSS site"
 
 1. Read the `motion/principles/*` concepts.
-2. Read `lib/transitions/usage.md` — copy the `t-*` pattern (open + closing
+2. Read `lib/transitions/transitions-usage.md` — copy the `t-*` pattern (open + closing
    states, motion tokens) or install the upstream transitions.dev skill.
-3. Read `lang/html/animation.md` — prefer `<dialog>`/Popover so the motion hangs
+3. Read `lang/html/html-animation.md` — prefer `<dialog>`/Popover so the motion hangs
    on accessible native elements.
 4. Verify each transition keeps its `@media (prefers-reduced-motion: reduce)` block.
 
@@ -172,7 +180,8 @@ Read `references/_brain.md`. **Wiki concept file shape:** Read `references/_temp
 3. Put real assets in `launch/assets/` and list them in `SOURCES.md`; write one scene per beat of
    the story as a sub-composition, its sound events in `data-cues`, motion on `springEase`.
 4. `EARSHOT_PYTHON=... bash scripts/video-loop.sh launch` until it exits 2; hand each stub to a critic
-   subagent (prompt in `self-critique.md`), apply the fix notes, rerun. Exit 3 means fixes to apply.
+   subagent (prompt in `self-critique.md`), apply the fix notes, rerun. Exit 3 means fixes to apply,
+   unless the report prints a `stall` line: then rewrite that unit's PLAN row with the user first.
 5. At exit 0, run `video-loop.sh --deliver launch`, look through `critique/final/frames`, then ask the
    user to watch `renders/final.mp4` with sound. At exit 4, stop and show the user what still fails.
 
@@ -196,6 +205,10 @@ point `EARSHOT_PYTHON` at its python, or set `"audio": "none"` in `scenes.json`.
 **A scene fails "freeze ... (unplanned)" on an intentional rest:** declare it in that scene's
 `holds` in `scenes.json` (scene-local seconds, `"to": "end"` allowed, at most 40% of the scene).
 Do not raise the threshold.
+
+**`stall <unit>: 7 -> 8 -> 7`:** the unit failed again at a score it already failed at. Fresh critics
+are pulling it in different directions. Stop editing it, show the user its fix notes, rewrite its PLAN
+row ("A, then B"), and rescore against the new row. Do not spend more renders on it.
 
 **"score ...: not counted":** every rubric line needs `<0-2> - <reason>` and the lines must sum to the score.
 

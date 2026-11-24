@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-19T19:12:46Z",
+  "generated_at": "2026-11-23T23:35:51Z",
   "source": {
     "repo": "github.com/jjfantini/humblSKILLS",
     "ref": "main",
-    "sha": "61f4002e8742b12c058d2ea9808a7a35a30746ad"
+    "sha": "b24941e960be4ec8ab625845f0ac5d7c27b200e7"
   },
   "skills": [
     {
@@ -461,8 +461,8 @@
     },
     {
       "name": "smart-animation",
-      "version": "0.6.0",
-      "description": "Performance-first frontend animation and transition guidance, routed by codebase (HTML, CSS, JavaScript, TypeScript, React) and by ready-made libraries (thinking-orbs, border-beam, metal-fx, liquid-gooey, transitions.dev, Canvas UI, Motion/Framer Motion, React Bits, Beautiful UI), plus a code-built video loop (HyperFrames render, earshot sound, self-critique). Use when adding animations, transitions, page or route transitions, scroll reveals, hover micro-interactions, loading/thinking indicators, or agent UI states (streaming text, tool calls, approval gates); when the user says \"animate this\", \"add motion\", \"make it feel premium\", \"page transition\", \"reveal on scroll\", or asks which animation library to use; or for \"make a video\", \"intro video\", \"launch video\", \"render to MP4\" or sound effects on a video. Enforces compositor-only performance and a reduced-motion floor. For whole-interface design direction use smart-frontend-design. Do NOT use for non-frontend work or static visual design with no motion.\n",
+      "version": "0.7.0",
+      "description": "Performance-first frontend animation, routed by codebase (HTML, CSS, JS, TS, React) and by ready-made libraries (thinking-orbs, border-beam, metal-fx, liquid-gooey, transitions.dev, Canvas UI, Motion, React Bits, Beautiful UI), plus a code-built video loop (HyperFrames, earshot sound, self-critique) and animated isometric or Three.js scenes. Use when adding animations, page or route transitions, scroll reveals, hover micro-interactions, loading/thinking indicators, or agent UI states (streaming text, tool calls, approval gates); when the user says \"animate this\", \"add motion\", \"make it feel premium\", or asks which animation library to use; for \"make a video\", \"launch video\", \"render to MP4\" or sound on a video; or for \"isometric\", \"3D scene\", \"Three.js\", \"warehouse visualization\", \"digital twin demo\". Enforces compositor-only performance and a reduced-motion floor. For whole-interface design use smart-frontend-design. Do NOT use for non-frontend work or static visual design with no motion.\n",
       "category": "design",
       "tags": [
         "animation",
@@ -478,6 +478,8 @@
         "video",
         "hyperframes",
         "earshot",
+        "isometric",
+        "threejs",
         "humblskill"
       ],
       "platforms": [
@@ -496,7 +498,7 @@
         "use-smart-animation"
       ],
       "path": "skills/smart-animation",
-      "dir_sha": "7d3de2ffc555955ca260671e73c971cf3206f7e2da360bb21000032c4650d745"
+      "dir_sha": "186984bfe8a6909b0e394c8c71bf81929efc27dab0c98c6f2ba58c024423bd3e"
     },
     {
       "name": "smart-claude-init",
