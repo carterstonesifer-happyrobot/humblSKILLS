@@ -11,6 +11,9 @@ Called by video-loop.sh; stdlib only. All paths are relative to the project dire
     video-gate.py scenes <project>          # "<id> <start> <end>" per scene, for per-scene evidence
 
 Gate exit codes: 0 pass, 1 plan not ready, 2 waiting for scores, 3 failing, 4 iteration cap reached while failing.
+Counted scores are kept per iteration in .loop/scores.json; a unit that fails at or below a score it already
+failed at is a stall (7 -> 8 -> 7): the report says so, and the loop stops editing it until its PLAN row changes
+(any PLAN.md edit starts a fresh history).
 Scores live in critique/<scene>.md and critique/pairs/<a>__<b>.md (`score: N` in the frontmatter); a score
 counts only when all five rubric lines carry a 0-2 number and a reason, and they sum to it.
 A score counts only while the stub's source_sha matches the current sources; any edit clears it, including
@@ -356,7 +359,12 @@ def cmd_report(project, mp4):
     if cut_on == 'beat' and beats is None:
         film.append('cut_on is "beat" but no beats/*.json (run hyperframes beats with a music <audio>)')
 
-    unscored, failing = [], []
+    hist = load(project, '.loop/scores.json', {})
+    plan = os.path.join(project, 'PLAN.md')
+    plan_sha = hashlib.sha256(open(plan, 'rb').read()).hexdigest()[:12] if os.path.exists(plan) else ''
+    if hist.get('_plan') != plan_sha:  # ponytail: any PLAN.md edit resets every unit's history, not just the row
+        hist = {'_plan': plan_sha}
+    unscored, failing, stalled = [], [], []
     for kind, key, h, stub, t0, t1 in units(project, cfg, times):
         auto = {}
         if kind == 'scene':
@@ -379,9 +387,16 @@ def cmd_report(project, mp4):
             failing.append(f"{key}: {auto['mechanical']}")
         if not re.fullmatch(r'\d+(\.\d+)?', score):
             unscored.append(key)
-        elif float(score) < need:
-            failing.append(f'{key}: {score}/10')
+        else:
+            runs = hist.setdefault(key, {})
+            runs[str(iteration)] = float(score)  # report runs several times per render: the last count wins
+            if float(score) < need:
+                failing.append(f'{key}: {score}/10')
+                if any(int(i) < iteration and need > v >= float(score) for i, v in runs.items()):
+                    stalled.append(f"{key}: " + ' -> '.join(f'{runs[i]:g}' for i in sorted(runs, key=int)))
 
+    os.makedirs(os.path.join(project, '.loop'), exist_ok=True)
+    json.dump(hist, open(os.path.join(project, '.loop', 'scores.json'), 'w'), indent=1)
     warn = banned_warnings(project, times)
     for w in warn:
         print('warn  ' + w)
@@ -389,6 +404,9 @@ def cmd_report(project, mp4):
         print('film  ' + f)
     for f in failing:
         print('fail  ' + f)
+    for s in stalled:
+        print(f'stall {s} (scores by iteration): stop editing this unit. Show the user its fix notes, rewrite '
+              'its PLAN row with them ("A, then B"), and rescore against the new row before the next render')
     failing += film
     if unscored and not failing:
         print('waiting for scores: ' + ', '.join(unscored))

@@ -3,14 +3,14 @@ title: "Self-Critique: Per-Scene Scores, Adjacent Pairs, Mechanical Rules"
 context: video
 category: loop
 concept: self-critique
-description: "Stage 3 of the video loop: the script gathers evidence and writes stubs, a critic scores each scene and each adjacent pair (>= 8/10) with a reason per rubric line, mechanical rules (dead frames, capped holds, sync, loudness, beats, assets) override any score, edits to a scene or a shared file clear stale scores, and a 5-iteration cap escalates to the user."
+description: "Stage 3 of the video loop: the script gathers evidence and writes stubs, a critic scores each scene and each adjacent pair (>= 8/10) with a reason per rubric line, mechanical rules (dead frames, capped holds, sync, loudness, beats, assets) override any score, edits to a scene or a shared file clear stale scores, a stall (a unit failing again at a score it already failed at) sends the unit back to its PLAN row, and a 5-iteration cap escalates to the user."
 tags: video, critique, rubric, dead-frames, freezedetect, gate, pairs, loop
 sources:
   - "references/raw/video-loop-brief.md"
   - "references/raw/hyperframes.md"
   - "references/raw/earshot.md"
   - "references/raw/claude-remotion-skill.md"
-last_ingested: 2026-10-20
+last_ingested: 2026-11-23
 command: scripts/video-loop.sh
 ---
 
@@ -94,6 +94,13 @@ out, and the freeze rule caught it.
   while failing.
 - `max_iterations` (default 5) counts renders. At exit 4, stop and show the user the failing units,
   their scores and fix notes; never loosen a threshold to get through.
+- **Stall rule.** Every counted score is kept per iteration in `.loop/scores.json`. A unit that fails
+  at or below a score it already failed at gets a `stall <unit>: 7 -> 8 -> 7` line in the report. The
+  test film spent its last three renders that way: units passing went 8, 8, 8, then 9 of 11, and it
+  hit exit 4 with the same two units at 7. A stall means the critics disagree about what the unit
+  should do. Another render does not fix that, but the plan does. Stop editing the unit, show the user
+  its fix notes, rewrite its PLAN row ("A, then B") with them, and rescore it against the new row.
+  Any PLAN.md edit starts a fresh history for every unit. The rule escalates at the stall, not at the cap.
 ### Critic subagent (recommended for every scoring pass)
 The author of a scene grades it generously. Hand each stale unit to a subagent that sees the evidence,
 not the source:

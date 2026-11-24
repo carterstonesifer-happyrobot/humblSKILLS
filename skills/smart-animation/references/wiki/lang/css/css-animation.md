@@ -2,7 +2,7 @@
 title: "CSS Animation: Native-First Motion"
 context: lang
 category: css
-concept: animation
+concept: css-animation
 description: "CSS-only motion best practices: transitions, keyframes, @property, @starting-style, View Transitions, and scroll-driven animations with zero JS."
 tags: css, keyframes, view-transitions, scroll-driven, starting-style, property
 sources:

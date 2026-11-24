@@ -2,7 +2,7 @@
 title: "React Bits: 140+ Copy-Paste Animated React Components"
 context: lib
 category: react-bits
-concept: usage
+concept: react-bits-usage
 description: "React Bits: 140+ animated React components via shadcn/jsrepo in four JS/TS x CSS/Tailwind variants. Per-component dependency cost (gsap/motion/three/ogl) and the missing reduced-motion gate."
 tags: react-bits, shadcn, jsrepo, text-animation, animated-background, gsap, three, react-19
 sources:
@@ -18,7 +18,7 @@ Vue and Svelte ports exist. Requires **React 19**.
 
 It is a catalog of *set-pieces*, not an engine. Reach for it when you want a
 specific finished effect (split-text reveal, aurora background, magnet button);
-reach for `lib/motion-react/usage.md` when you need a primitive to build with.
+reach for `lib/motion-react/motion-react-usage.md` when you need a primitive to build with.
 
 ### Install: the variant is encoded in the name
 
@@ -82,7 +82,7 @@ deleting.
 
 **MIT + Commons Clause** — free for personal and commercial use inside your own
 product, but you may not sell the components themselves as a component library.
-Same posture as Canvas UI (`lib/canvas-ui/usage.md`). The repo's `package.json`
+Same posture as Canvas UI (`lib/canvas-ui/canvas-ui-usage.md`). The repo's `package.json`
 is private with no `license` field; the grant is in the site and the repo
 LICENSE file.
 
@@ -90,7 +90,7 @@ LICENSE file.
 
 Animated backgrounds and 3D effects are the heaviest tier here. Per
 `motion/principles/design.md`, spend them on **one** signature moment — a hero —
-and use `lang/css/animation.md` techniques for the rest of the page.
+and use `lang/css/css-animation.md` techniques for the rest of the page.
 
 ## Sources
 

@@ -2,7 +2,7 @@
 title: "Beautiful UI: Copy-Paste Primitives for AI-Native Interfaces"
 context: lib
 category: beautiful-ui
-concept: usage
+concept: beautiful-ui-usage
 description: "Beautiful UI: 17 copy-paste React components for agent UIs (thinking, streaming, approval, tool chips, diffs). Zero deps beyond React, but tokens/keyframes/reduced-motion live in global CSS you must port."
 tags: beautiful-ui, ai-native, agent-ui, thinking-state, streaming-text, approval, tool-chips, copy-paste, design-tokens
 sources:

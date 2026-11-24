@@ -2,7 +2,7 @@
 title: "transitions.dev: Framework-Agnostic CSS Transitions"
 context: lib
 category: transitions
-concept: usage
+concept: transitions-usage
 description: "transitions.dev: 27 copy-paste CSS UI transitions for any stack. Two integration paths (install the skill or copy the t-* pattern) plus motion tokens."
 tags: transitions-dev, css, framework-agnostic, modal, toast, motion-tokens
 sources:
