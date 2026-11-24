@@ -308,3 +308,62 @@ Content below the frontmatter. This must stay byte-exact.
 		}
 	}
 }
+
+// A file the previous revision shipped, the user never edited, and the new
+// revision no longer ships (an upstream rename or delete) must not be carried
+// forward. Edited and user-created files must be, and without a previous
+// revision every user file is kept.
+func TestApplyPreserve_DropsUneditedFilesUpstreamRemoved(t *testing.T) {
+	put := func(root, rel, body string) {
+		t.Helper()
+		p := filepath.Join(root, rel)
+		if err := os.MkdirAll(filepath.Dir(p), 0o755); err != nil {
+			t.Fatal(err)
+		}
+		if err := os.WriteFile(p, []byte(body), 0o644); err != nil {
+			t.Fatal(err)
+		}
+	}
+	for _, tc := range []struct {
+		name       string
+		pristine   bool
+		gone, kept []string
+	}{
+		{"previous revision known", true,
+			[]string{"wiki/a.md", "wiki/old/x.md"},
+			[]string{"wiki/b.md", "wiki/c.md", "wiki/a2.md", "wiki/old/mine.md"}},
+		{"previous revision unavailable", false,
+			nil,
+			[]string{"wiki/a.md", "wiki/old/x.md", "wiki/b.md", "wiki/c.md", "wiki/a2.md", "wiki/old/mine.md"}},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			user, staging, prev := t.TempDir(), t.TempDir(), t.TempDir()
+			put(prev, "wiki/a.md", "A")
+			put(prev, "wiki/b.md", "B")
+			put(prev, "wiki/old/x.md", "X")
+			put(user, "wiki/a.md", "A")        // unedited, renamed upstream
+			put(user, "wiki/b.md", "B edited") // edited by the user
+			put(user, "wiki/c.md", "C")        // created by the user
+			put(user, "wiki/old/x.md", "X")    // unedited, its dir dropped upstream
+			put(user, "wiki/old/mine.md", "M") // the user's file inside that dir
+			put(staging, "wiki/a2.md", "A")
+			pristine := ""
+			if tc.pristine {
+				pristine = prev
+			}
+			if err := applyPreserve(user, staging, pristine, []string{"wiki/"}); err != nil {
+				t.Fatal(err)
+			}
+			for _, rel := range tc.gone {
+				if _, err := os.Stat(filepath.Join(staging, rel)); err == nil {
+					t.Errorf("%s carried forward", rel)
+				}
+			}
+			for _, rel := range tc.kept {
+				if _, err := os.Stat(filepath.Join(staging, rel)); err != nil {
+					t.Errorf("%s missing: %v", rel, err)
+				}
+			}
+		})
+	}
+}
